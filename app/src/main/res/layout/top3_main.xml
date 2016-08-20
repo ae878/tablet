@@ -5,20 +5,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-    <TextView
-        android:id="@+id/top3Title"
-        android:layout_width="match_parent"
-        android:layout_height="290px"
-        android:text="금주의 TOP 3"
-        android:textColor="#000000"
-        android:textSize="136.8px"
-        android:paddingTop="130px"
-        android:gravity="center_horizontal" />
+<mimi.show.Top3ScreenViewFlipper
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <ViewFlipper
-        android:layout_width="match_parent"
-        android:layout_height="1125px"
-        android:id="@+id/top3flipper"></ViewFlipper>
+</mimi.show.Top3ScreenViewFlipper>
 
 
 </LinearLayout>

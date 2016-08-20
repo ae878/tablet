@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/top3"
+
+  >
+
+    <ViewFlipper
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="fill"
+        android:id="@+id/top3flipper"></ViewFlipper>
+
+    <TextView
+        android:id="@+id/top3Title"
+        android:layout_width="match_parent"
+        android:layout_height="361px"
+        android:text="금주의 top 3"
+        android:textColor="#000000"
+        android:textSize="136.8px"
+        android:paddingTop="130px"
+        android:gravity="center_horizontal"/>
+    <ImageView
+        android:layout_width="110px"
+        android:layout_height="120px"
+        android:layout_marginLeft="120px"
+        android:layout_marginTop="110px"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/back"
+        android:onClick="onButtonBackClicked"/>
+
+    <RelativeLayout
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:id="@+id/tagLayout"
+        android:layout_below="@id/top3Title"
+        android:gravity="right"
+        android:layout_alignRight="@id/top3Title"
+
+        >
+        <ImageView
+            android:layout_width="400px"
+            android:layout_height="120px"
+            android:layout_marginBottom="30px"
+            android:background="@drawable/tab1"
+            android:layout_alignParentRight="true"
+            android:id="@+id/tag1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@id/tag1"
+            android:layout_alignBottom="@id/tag1"
+            android:layout_alignTop="@id/tag1"
+            android:layout_alignRight="@id/tag1"
+            android:text="1위"
+            android:layout_marginLeft="56.8px"
+            android:textSize="70px"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:id="@+id/tag1text"
+
+            />
+
+        <ImageView
+            android:layout_width="250px"
+            android:layout_height="120px"
+            android:layout_below="@id/tag1"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="30px"
+            android:gravity="right"
+                    android:background="@drawable/tab2"
+            android:id="@+id/tag2"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@id/tag2"
+            android:layout_alignBottom="@id/tag2"
+            android:layout_alignTop="@id/tag2"
+            android:layout_alignRight="@id/tag2"
+            android:textSize="50px"
+            android:textColor="#ffffff"
+            android:text="2위"
+            android:layout_marginLeft="35.53px"
+            android:id="@+id/tag2text"
+            android:gravity="center"
+            />
+
+
+        <ImageView
+            android:layout_width="250px"
+            android:gravity="right"
+            android:layout_height="120px"
+            android:layout_below="@id/tag2"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/tab2"
+            android:id="@+id/tag3"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@id/tag3"
+            android:layout_alignBottom="@id/tag3"
+            android:layout_alignTop="@id/tag3"
+            android:layout_alignRight="@id/tag3"
+            android:textSize="50px"
+            android:textColor="#ffffff"
+            android:text="3위"
+            android:id="@+id/tag3text"
+            android:layout_marginLeft="35.53px"
+
+            android:gravity="center"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

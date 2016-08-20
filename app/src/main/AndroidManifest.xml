@@ -2,16 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mimi.show">
 
+    <uses-feature android:name="android.hardware.Camera" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Top3_1"></activity>
-        <activity android:name=".Top3_2"></activity>
-        <activity android:name=".Top3"></activity>
         <activity android:name=".Today"></activity>
+        <activity android:name=".NewActivity"></activity>
         <activity android:name=".Top3Activity"></activity>
         <activity android:name=".MainActivity"
             >

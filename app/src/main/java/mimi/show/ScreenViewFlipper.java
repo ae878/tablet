@@ -20,6 +20,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
@@ -28,7 +29,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.logging.Handler;
 
-public class ScreenViewFlipper extends LinearLayout implements View.OnTouchListener {
+public class ScreenViewFlipper extends RelativeLayout implements View.OnTouchListener {
 
     public static int countIndexes = 3;
     LinearLayout buttonLayout;
@@ -85,23 +86,27 @@ public class ScreenViewFlipper extends LinearLayout implements View.OnTouchListe
         });
 
 
-
-        LayoutParams params = new LayoutParams(45,45);
-        params.leftMargin=55;
-
+       LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
+        params.width=40;
+        params.height=40;
+        params.topMargin=50;
+        params.leftMargin = 50;
         this.setLayoutParams(params);
 
        indexButtons = new ImageView[countIndexes];
         views = new ImageView[countIndexes];
 
-
-
         for(int i=0; i< countIndexes;i++){
             indexButtons[i] = new ImageView(context);
             if(i==currentIndex) {
-                indexButtons[i].setBackgroundColor(Color.rgb(46,51,146));
+                indexButtons[i].setBackgroundColor(Color.rgb(46, 51, 146));
+
             }else{
                 indexButtons[i].setBackgroundColor(Color.rgb(155,155,155));
+
+
             }
             buttonLayout.addView(indexButtons[i],params);
 

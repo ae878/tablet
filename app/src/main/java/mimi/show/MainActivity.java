@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     LinearLayout buttonLayout;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +40,10 @@ public class MainActivity extends AppCompatActivity {
 
         buttonLayout = (LinearLayout) findViewById(R.id.buttonLayout);
         mHandler.sendEmptyMessage(0);
+
     }
+
+
 
 android.os.Handler mHandler = new android.os.Handler(){
     public void handleMessage(Message msg){
@@ -47,10 +51,6 @@ android.os.Handler mHandler = new android.os.Handler(){
         mHandler.sendEmptyMessageDelayed(2500, 2500);
     };
 };
-
-
-
-
     public void onButton1Clicked(View v) {
 
         Intent intent = new Intent(getApplicationContext(), Top3Activity.class);
