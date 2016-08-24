@@ -42,6 +42,7 @@ public class Top3Activity extends AppCompatActivity {
 
 
     public void onButtonBackClicked(View v){
+
         finish();
     }
 }

@@ -69,6 +69,7 @@ public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouc
 
             }
             public void onFinish() {
+                timer.cancel();
                 Intent intent = new Intent(context,MainActivity.class);
                 context.startActivity(intent);
             }

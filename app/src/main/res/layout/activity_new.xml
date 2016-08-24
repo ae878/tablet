@@ -1,13 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="horizontal"
+    android:id="@+id/newscreen"
+    >
+<LinearLayout
+    android:background="@drawable/xml_border"
+    android:layout_width="904px"
+    android:layout_height="1336px"
+    android:layout_marginTop="80px"
+    android:layout_marginBottom="80px"
+    android:layout_marginLeft="80px"
+    android:layout_marginRight="80px"
+    android:onClick="onButton1Clicked"
+    android:orientation="vertical"
     >
 <TextView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="hi"/>
+    android:layout_height="wrap_content"
+    android:text="BEST"
+    android:textSize="150px"
+    android:id="@+id/best"
+    android:layout_marginTop="80px"
+    android:textColor="#FFFFFF"
+    android:shadowColor="#000000"
+    android:shadowRadius="1.5"
+    android:shadowDx="10"
+    android:shadowDy="10"
+    android:gravity="center_horizontal"
+    android:layout_gravity="center_horizontal"/>
+
+    <ImageView
+        android:layout_width="520px"
+        android:layout_height="860px" />
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="엑스트라 커피 카라멜 프라푸치노"
+    android:textSize="52px"
+    android:textColor="#FFFFFF"
+    android:shadowColor="#000000"
+    android:shadowRadius="1.5"
+    android:shadowDy="3"
+    android:shadowDx="3"
+    android:id="@+id/nanum"
+    android:gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EXTRA COFFEE CARAMEL FRAPPUCCINO"
+        android:textColor="#666666"
+        android:textSize="40px"
+        android:layout_marginTop="15px"
+        android:id="@+id/hm"
+        android:gravity="center_horizontal"/>
+</LinearLayout>
+
+    <LinearLayout
+        android:background="@drawable/xml_border"
+        android:layout_width="904px"
+        android:layout_height="1336px"
+        android:layout_marginTop="80px"
+        android:layout_marginBottom="80px"
+        android:layout_marginRight="80px"
+        android:onClick="onButton2Clicked"
+        android:orientation="vertical"
+        >
 
 
-</RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="오늘의 메뉴"
+        android:layout_marginTop="80px"
+        android:shadowRadius="1.5"
+        android:shadowDx="10"
+        android:shadowDy="10"
+        android:gravity="center_horizontal"
+        android:textColor="#FFFFFF"
+        android:textSize="150px"
+        android:id="@+id/todaymenu"
+        android:shadowColor="#000000"/>
+
+        <ImageView
+            android:layout_width="520px"
+            android:layout_height="860px" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="레드 빈 그린티 프라푸치노"
+            android:id="@+id/nanum1"
+            android:textSize="52px"
+            android:textColor="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:shadowColor="#000000"
+            android:shadowRadius="1.5"
+            android:shadowDy="3"
+            android:shadowDx="3"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15px"
+
+            android:text="RED BEAN GREEN TEA FRAPPUCCINO"
+            android:gravity="center_horizontal"
+            android:textColor="#666666"
+            android:textSize="40px"
+            android:id="@+id/hm2"/>
+    </LinearLayout>
+    </LinearLayout>

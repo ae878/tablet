@@ -29,6 +29,7 @@ public class Today extends AppCompatActivity {
 
             }
             public void onFinish() {
+                timer.cancel();
                 finish();
             }
         };
@@ -54,6 +55,7 @@ public class Today extends AppCompatActivity {
     }
 
     public void onButtonBackClicked(View v){
+        timer.cancel();
         finish();
     }
 }

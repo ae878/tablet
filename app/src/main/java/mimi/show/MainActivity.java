@@ -51,15 +51,9 @@ android.os.Handler mHandler = new android.os.Handler(){
         mHandler.sendEmptyMessageDelayed(2500, 2500);
     };
 };
-    public void onButton1Clicked(View v) {
+    public void onButton3Clicked(View v) {
 
-        Intent intent = new Intent(getApplicationContext(), Top3Activity.class);
-        startActivity(intent);
-    }
-
-    public void onButton2Clicked(View v) {
-
-        Intent intent = new Intent(getApplicationContext(), Today.class);
+        Intent intent = new Intent(getApplicationContext(), NewActivity.class);
         startActivity(intent);
     }
 }
