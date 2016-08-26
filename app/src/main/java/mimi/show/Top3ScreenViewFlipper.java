@@ -2,18 +2,14 @@ package mimi.show;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.PixelFormat;
 import android.os.CountDownTimer;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
@@ -151,11 +147,11 @@ public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouc
         for(int i=0; i< countIndexes;i++){
                  ImageView imageSample = new ImageView(context);
             switch (i) {
-                case 0 : imageSample.setImageResource(R.drawable.sample);
+                case 0 : imageSample.setBackgroundResource(R.drawable.sample);
                     break;
-                case 1 : imageSample.setImageResource(R.drawable.sample2);
+                case 1 : imageSample.setBackgroundResource(R.drawable.sample2);
                     break;
-                case 2 : imageSample.setImageResource(R.drawable.sample3);
+                case 2 : imageSample.setBackgroundResource(R.drawable.sample3);
                     break;
             }
 
@@ -169,7 +165,7 @@ public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouc
     public void updateIndexes() {
         for(int i = 0; i < countIndexes; i++) {
             if (i == currentIndex) {
-                tag[i].setBackgroundResource(R.drawable.tab1);
+
                 LayoutParams params = (LayoutParams) tag[i].getLayoutParams();
                 params.width = 400;
                 params.height = 120;
@@ -178,7 +174,7 @@ public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouc
 
                 tagText[i].setTextSize(0,70);
             }else{
-                tag[i].setBackgroundResource(R.drawable.tab2);
+
                 LayoutParams params = (LayoutParams) tag[i].getLayoutParams();
                 params.width = 250;
                 params.height = 120;

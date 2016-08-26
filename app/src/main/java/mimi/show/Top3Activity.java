@@ -23,18 +23,22 @@ public class Top3Activity extends AppCompatActivity {
 
         setContentView(R.layout.top3_main);
         textView = (TextView) findViewById(R.id.top3Title);
-        textView.setTypeface(Typeface.createFromAsset(getAssets(), "Tayle_B.ttf"));
+        textView.setTypeface(Typeface.createFromAsset(getAssets(), "pencil.ttf"));
 
 
         textView = (TextView) findViewById(R.id.tag1text);
-        textView.setTypeface(Typeface.createFromAsset(getAssets(), "Tayle_B.ttf"));
+        textView.setTypeface(Typeface.createFromAsset(getAssets(), "pencil.ttf"));
 
 
         textView = (TextView) findViewById(R.id.tag2text);
-        textView.setTypeface(Typeface.createFromAsset(getAssets(), "Tayle_B.ttf"));
+        textView.setTypeface(Typeface.createFromAsset(getAssets(), "pencil.ttf"));
 
         textView = (TextView) findViewById(R.id.tag3text);
-        textView.setTypeface(Typeface.createFromAsset(getAssets(), "Tayle_B.ttf"));
+        textView.setTypeface(Typeface.createFromAsset(getAssets(), "pencil.ttf"));
+
+
+        textView = (TextView) findViewById(R.id.liketext);
+        textView.setTypeface(Typeface.createFromAsset(getAssets(), "pencil.ttf"));
 
     }
 

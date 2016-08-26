@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="arm64-v8a,armeabi-v7a,armeabi"
+    api-level="23"
+    density="xhdpi"
+    format="7"
+    timestamp="92117791043413"
+    token="-2800444364968197226"
+    verifier="COMPATIBLE" >
+
+    <task
+        name="javac"
+        duration="358" />
+    <task
+        name="instant-run-dex"
+        duration="462" />
+    <task
+        name="instant-run-transform"
+        duration="28" />
+    <task
+        name="verifier"
+        duration="3" />
+
+    <artifact
+        location="C:\Users\mijin\AndroidStudioProjects\Show\app\build\intermediates\reload-dex\debug\classes.dex"
+        type="RELOAD_DEX" />
+
+    <build timestamp="91380796480000" >
+        <artifact
+            location="C:\Users\mijin\AndroidStudioProjects\Show\app\build\intermediates\res\resources-debug.ap_"
+            type="RESOURCES" />
+    </build>
+    <build
+        timestamp="92054587844266"
+        verifier="R_CLASS_CHANGE" >
+        <artifact
+            location="C:\Users\mijin\AndroidStudioProjects\Show\app\build\intermediates\res\resources-debug.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="C:\Users\mijin\AndroidStudioProjects\Show\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_1\classes.dex"
+            type="DEX" />
+    </build>
+    <build timestamp="685285780620800" >
+        <artifact
+            location="C:\Users\mijin\AndroidStudioProjects\Show\app\build\outputs\apk\app-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>

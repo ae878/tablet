@@ -101,10 +101,10 @@ public class ScreenViewFlipper extends RelativeLayout implements View.OnTouchLis
         for(int i=0; i< countIndexes;i++){
             indexButtons[i] = new ImageView(context);
             if(i==currentIndex) {
-              //  indexButtons[i].setImageResource(R.drawable.swipe);
+                indexButtons[i].setImageResource(R.drawable.swipe_select);
 
             }else{
-                //indexButtons[i].setImageResource(R.drawable.swipe_select);
+                indexButtons[i].setImageResource(R.drawable.swipe);
 
 
 
@@ -129,10 +129,10 @@ public class ScreenViewFlipper extends RelativeLayout implements View.OnTouchLis
     public void updateIndexes() {
         for(int i = 0; i < countIndexes; i++) {
             if (i == currentIndex) {
-            //    indexButtons[i].setImageResource(R.drawable.swipe);
+            indexButtons[i].setImageResource(R.drawable.swipe_select);
 
             }else{
-              //  indexButtons[i].setImageResource(R.drawable.swipe_select);
+               indexButtons[i].setImageResource(R.drawable.swipe);
 
             }
         }
