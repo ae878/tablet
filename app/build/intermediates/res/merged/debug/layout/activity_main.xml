@@ -22,8 +22,6 @@
           android:text="얼굴 인식"
           android:onClick="onButton3Clicked"/>
 
-
-
 </LinearLayout>
 
 

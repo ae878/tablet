@@ -8,17 +8,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Today extends AppCompatActivity {
     CountDownTimer timer = null;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.today);
+
+        ImageView test = (ImageView) findViewById(R.id.test);
+
+        test.setImageDrawable(MainActivity.fetchImage(MainActivity.img_dir[0]));
 
         TextView title = (TextView) findViewById(R.id.todayTitle);
         title.setTypeface(Typeface.createFromAsset(getAssets(), "Tayle_B.ttf"));

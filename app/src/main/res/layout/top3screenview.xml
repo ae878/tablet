@@ -18,7 +18,7 @@
     <TextView
         android:id="@+id/top3Title"
         android:layout_width="match_parent"
-        android:layout_height="361px"
+        android:layout_height="316px"
         android:text="금주의 top 3"
         android:textColor="#FFFFFF"
         android:shadowColor="#000000"
@@ -47,6 +47,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/tagLayout"
         android:layout_below="@id/top3Title"
+        android:layout_marginTop="112px"
         android:gravity="right"
         android:layout_alignRight="@id/top3Title"
 
@@ -54,6 +55,7 @@
         <ImageView
             android:layout_width="400px"
             android:layout_height="120px"
+
             android:layout_marginBottom="30px"
             android:background="@drawable/tab_1"
             android:layout_marginRight="80px"

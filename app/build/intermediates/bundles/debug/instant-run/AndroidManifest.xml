@@ -11,6 +11,7 @@
     <uses-feature android:name="android.hardware.Camera" />
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name="com.android.tools.fd.runtime.BootstrapApplication"
@@ -19,10 +20,18 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="mimi.show.Today" />
-        <activity android:name="mimi.show.NewActivity" />
-        <activity android:name="mimi.show.Top3Activity" />
-        <activity android:name="mimi.show.MainActivity" >
+        <activity
+            android:name="mimi.show.Today"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="mimi.show.NewActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="mimi.show.Top3Activity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="mimi.show.MainActivity"
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
