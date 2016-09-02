@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86"
+    abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="23"
     density="xhdpi"
     format="7"
-    timestamp="23876566440405"
+    timestamp="98274853493145"
     token="-2800444364968197226" >
 
     <task
@@ -20,21 +20,6 @@
         name="verifier"
         duration="0" />
 
-    <build timestamp="12887657002227" >
-        <artifact
-            location="C:\Users\mijin\AndroidStudioProjects\Show\app\build\outputs\apk\app-debug.apk"
-            type="MAIN" />
-    </build>
-    <build timestamp="14546169025069" >
-        <artifact
-            location="C:\Users\mijin\AndroidStudioProjects\Show\app\build\intermediates\res\resources-debug.ap_"
-            type="RESOURCES" />
-    </build>
-    <build timestamp="23731602267650" >
-        <artifact
-            location="C:\Users\mijin\AndroidStudioProjects\Show\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_1\classes.dex"
-            type="DEX" />
-    </build>
-    <build timestamp="23876566440405" />
+    <build timestamp="98274853493145" />
 
 </instant-run>

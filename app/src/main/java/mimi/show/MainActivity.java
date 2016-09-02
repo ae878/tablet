@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     int num= 50;
     static String img_dir[];
-    static String myResult;
+    String myResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void send() {
+    public String send() {
 
         new Thread() {
             public void run() {
@@ -129,35 +129,27 @@ public class MainActivity extends AppCompatActivity {
                     StringBuilder builder = new StringBuilder();
                     String str;
                    while ((str = reader.readLine()) != null) {       // 서버에서 라인단위로 보내줄 것이므로 라인단위로 읽는다
-                       builder.append(str + "\n"+"\n");                     // View에 표시하기 위해 라인 구분자 추가
+                       builder.append(str + "\n");                     // View에 표시하기 위해 라인 구분자 추가
                     }
                    myResult = builder.toString();                       // 전송결과를 전역 변수에 저장
-                    System.out.println(myResult);
+                    System.out.println("builder다음"+myResult);
 
-                    JSONArray jarray=new JSONArray(myResult);
-                    img_dir= new String[num];
-
-                    for (int i = 0; i < jarray.length(); i++) {
-                        JSONObject jObject = jarray.getJSONObject(i);  // JSONObject 추출
-                        img_dir[i] ="http://52.78.68.136/"+ jObject.getString("img_dir");
-                        System.out.println("hiiiiiiiiiiiiiiiiiii\n\n\n\n"+img_dir[i]);
-                    }
 
                 } catch (MalformedURLException e) {
                     //
                 } catch (IOException e) {
                     System.out.println(e);
-                }catch (JSONException e) {
-                    e.printStackTrace();
                 }
             }
 
         }.start();
 
-        //doJSONParser();
+        System.out.println("start 다음 "+myResult);
+
+        return myResult;
     }
 
-/*
+
    public void doJSONParser(){
 
        System.out.println("HHHHHHHHHHHHHHHHHHHH"+myResult);
@@ -171,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
         }catch (JSONException e) {
             e.printStackTrace();
         }
-}*/
+}
 
 
 
