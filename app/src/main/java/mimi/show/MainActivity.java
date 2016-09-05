@@ -47,9 +47,9 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout buttonLayout;
     public static today_data Today_DATA = new today_data();
 
-    int num= 50;
-    static String img_dir[];
-    String myResult;
+    int num = 50;
+    static String[] img_dir;
+    static String myResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,15 +59,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         textView = (TextView) findViewById(R.id.title);
         textView.setTypeface(Typeface.createFromAsset(getAssets(), "Tayle_B.ttf"));
-        Today_DATA.img_url="http://icon.daumcdn.net/w/icon/1606/30/105915014.png";
+        Today_DATA.img_url = "http://icon.daumcdn.net/w/icon/1606/30/105915014.png";
         buttonLayout = (LinearLayout) findViewById(R.id.buttonLayout);
         mHandler.sendEmptyMessage(0);
 
-
-        send();
     }
-    public static Drawable fetchImage(final String urlstr)
-    {
+
+    public static Drawable fetchImage(final String urlstr) {
         final int[] i = {0};
         final String str = urlstr;
         final Bitmap[] img = new Bitmap[1];
@@ -85,18 +83,18 @@ public class MainActivity extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                i[0]=1;
+                i[0] = 1;
             }
         });
         thread.start();
-        while (i[0]==0){}
+        while (i[0] == 0) {
+        }
         return new BitmapDrawable(img[0]);
 
     }
 
 
-    public String send() {
-
+    public static void send(int x) {
         new Thread() {
             public void run() {
                 try {
@@ -128,12 +126,13 @@ public class MainActivity extends AppCompatActivity {
                     BufferedReader reader = new BufferedReader(tmp);
                     StringBuilder builder = new StringBuilder();
                     String str;
-                   while ((str = reader.readLine()) != null) {       // 서버에서 라인단위로 보내줄 것이므로 라인단위로 읽는다
-                       builder.append(str + "\n");                     // View에 표시하기 위해 라인 구분자 추가
+                    while ((str = reader.readLine()) != null) {       // 서버에서 라인단위로 보내줄 것이므로 라인단위로 읽는다
+                        builder.append(str + "\n");                     // View에 표시하기 위해 라인 구분자 추가
                     }
-                   myResult = builder.toString();                       // 전송결과를 전역 변수에 저장
-                    System.out.println("builder다음"+myResult);
+                    myResult = builder.toString();                       // 전송결과를 전역 변수에 저장
+                    System.out.println(myResult);
 
+                    doJSONParser();
 
                 } catch (MalformedURLException e) {
                     //
@@ -143,22 +142,21 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }.start();
-
-        System.out.println("start 다음 "+myResult);
-
-        return myResult;
     }
 
 
-   public void doJSONParser(){
 
-       System.out.println("HHHHHHHHHHHHHHHHHHHH"+myResult);
-        try {
+
+   static public void doJSONParser(){
+
+       img_dir=new String[50];
+
+       try {
             JSONArray jarray = new JSONArray(myResult);   // JSONArray 생성
             for (int i = 0; i < jarray.length(); i++) {
                 JSONObject jObject = jarray.getJSONObject(i);  // JSONObject 추출
+                System.out.println(jObject);
                 img_dir[i] ="http://52.78.68.136/"+ jObject.getString("img_dir");
-                System.out.println("hiiiiiiiiiiiiiiiiiii\n\n\n\n"+img_dir[i]);
             }
         }catch (JSONException e) {
             e.printStackTrace();
