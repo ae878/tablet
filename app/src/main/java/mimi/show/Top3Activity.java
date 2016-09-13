@@ -1,7 +1,11 @@
 package mimi.show;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Message;
@@ -9,12 +13,32 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class Top3Activity extends AppCompatActivity {
     TextView textView;
     CountDownTimer timer;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +64,21 @@ public class Top3Activity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.liketext);
         textView.setTypeface(Typeface.createFromAsset(getAssets(), "pencil.ttf"));
 
+
+
     }
 
 
+public void onButtonLike(View v){
+    ImageView smallheart = (ImageView)findViewById(R.id.smalllike);
+    smallheart.setVisibility(View.VISIBLE);
 
 
+    smallheart.startAnimation(AnimationUtils.loadAnimation(this,R.anim.heart_up));
+
+    smallheart.setVisibility(View.INVISIBLE);
+
+}
     public void onButtonBackClicked(View v){
 
         finish();

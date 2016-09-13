@@ -105,19 +105,16 @@ public class ScreenViewFlipper extends RelativeLayout implements View.OnTouchLis
 
             }else{
                 indexButtons[i].setImageResource(R.drawable.swipe);
-
-
-
             }
             buttonLayout.addView(indexButtons[i],params);
 
             ImageView imageSample = new ImageView(context);
             switch (i) {
-                case 0 : imageSample.setImageResource(R.drawable.sample);
+                 case 0 : imageSample.setImageResource(R.drawable.kakao3);
                     break;
-                case 1 : imageSample.setImageResource(R.drawable.sample2);
+                case 1 : imageSample.setImageResource(R.drawable.kakao4);
                     break;
-                case 2 : imageSample.setImageResource(R.drawable.sample3);
+                case 2 : imageSample.setImageResource(R.drawable.kakao2);
                     break;
             }
 

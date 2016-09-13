@@ -22,7 +22,7 @@ public class Today extends AppCompatActivity {
 
         ImageView test = (ImageView) findViewById(R.id.test);
 
-        test.setImageDrawable(MainActivity.fetchImage(MainActivity.send(0,0)));
+        test.setImageDrawable(MainActivity.fetchImage(MainActivity.img_dir[0]));
 
         TextView title = (TextView) findViewById(R.id.todayTitle);
         title.setTypeface(Typeface.createFromAsset(getAssets(), "Tayle_B.ttf"));

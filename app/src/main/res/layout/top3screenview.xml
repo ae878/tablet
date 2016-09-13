@@ -140,6 +140,7 @@
             android:layout_marginRight="100px"
             android:layout_marginBottom="100px"
             android:background="@drawable/like"
+            android:onClick="onButtonLike"
             android:id="@+id/like"/>
 
         <TextView
@@ -154,7 +155,19 @@
             android:text="♥568"
             android:id="@+id/liketext"
             android:gravity="center"
+            android:onClick="onButtonLike"
             />
     </RelativeLayout>
 
+
+    <ImageView
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="100px"
+        android:layout_marginBottom="100px"
+        android:background="@drawable/like"
+        android:id="@+id/smalllike"
+        android:visibility="invisible"/>
 </RelativeLayout>
