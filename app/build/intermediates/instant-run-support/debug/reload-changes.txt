@@ -1,0 +1,8 @@
+CHANGED,C:\Users\mijin\AndroidStudioProjects\Show\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\mimi\show\MainActivity$6$override.class
+CHANGED,C:\Users\mijin\AndroidStudioProjects\Show\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\mimi\show\MainActivity$5$override.class
+CHANGED,C:\Users\mijin\AndroidStudioProjects\Show\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
+CHANGED,C:\Users\mijin\AndroidStudioProjects\Show\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\mimi\show\MainActivity$GraphicFaceTracker$override.class
+CHANGED,C:\Users\mijin\AndroidStudioProjects\Show\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\mimi\show\MainActivity$3$override.class
+CHANGED,C:\Users\mijin\AndroidStudioProjects\Show\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\mimi\show\MainActivity$override.class
+CHANGED,C:\Users\mijin\AndroidStudioProjects\Show\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\mimi\show\MainActivity$4$override.class
+CHANGED,C:\Users\mijin\AndroidStudioProjects\Show\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\mimi\show\MainActivity$today_data$override.class

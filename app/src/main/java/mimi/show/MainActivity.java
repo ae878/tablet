@@ -150,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
         Context context = getApplicationContext();
         FaceDetector detector = new FaceDetector.Builder(context)
+                .setProminentFaceOnly(true)
                 .setClassificationType(FaceDetector.ALL_CLASSIFICATIONS)
                 .build();
 
@@ -172,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
 
         mCameraSource = new CameraSource.Builder(context, detector)
                 .setRequestedPreviewSize(640, 480)
-                .setFacing(CameraSource.CAMERA_FACING_BACK)
+                .setFacing(CameraSource.CAMERA_FACING_FRONT)
                 .setRequestedFps(30.0f)
                 .build();
     }
@@ -330,6 +331,8 @@ public class MainActivity extends AppCompatActivity {
         public void onUpdate(FaceDetector.Detections<Face> detectionResults, Face face) {
             mOverlay.add(mFaceGraphic);
             mFaceGraphic.updateFace(face);
+            Intent intent = new Intent(getApplicationContext(), NewActivity.class);
+            startActivity(intent);
         }
 
         /**
