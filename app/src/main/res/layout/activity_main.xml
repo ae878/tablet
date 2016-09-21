@@ -8,12 +8,14 @@
    <mimi.show.CameraSourcePreview
        android:id="@+id/preview"
        android:layout_width="match_parent"
-       android:layout_height="match_parent">
+       android:layout_height="match_parent"
+       android:visibility="invisible">
 
       <mimi.show.GraphicOverlay
           android:id="@+id/faceOverlay"
           android:layout_width="match_parent"
-          android:layout_height="match_parent" />
+          android:layout_height="match_parent"
+          android:visibility="invisible"/>
 
    </mimi.show.CameraSourcePreview>
    <mimi.show.ScreenViewFlipper
@@ -37,18 +39,6 @@
 
 
 
-   <TextView
-       android:id="@+id/title"
-       android:layout_width="match_parent"
-       android:layout_height="361px"
-       android:text="금주 best메뉴"
-       android:textColor="#000000"
-       android:textSize="136.8px"
-       android:paddingTop="130px"
-       android:layout_gravity="center_horizontal"
-       android:layout_alignParentTop="true"
-       android:gravity="center"
-       />
 
 
 

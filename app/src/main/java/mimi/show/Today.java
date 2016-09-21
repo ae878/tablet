@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,6 +24,12 @@ public class Today extends AppCompatActivity {
         ImageView test = (ImageView) findViewById(R.id.test);
 
         test.setImageDrawable(MainActivity.fetchImage(MainActivity.img_dir[0]));
+
+
+        TextView liketext = (TextView)findViewById(R.id.liketodaytext);
+
+        liketext.setTypeface(Typeface.createFromAsset(getAssets(), "Tayle_B.ttf"));
+        liketext.setText(MainActivity.like);
 
         TextView title = (TextView) findViewById(R.id.todayTitle);
         title.setTypeface(Typeface.createFromAsset(getAssets(), "Tayle_B.ttf"));
@@ -61,5 +68,19 @@ public class Today extends AppCompatActivity {
     public void onButtonBackClicked(View v){
         timer.cancel();
         finish();
+    }
+
+
+    public void onButtonLikeToday(View v){
+
+        ImageView smallheart = (ImageView)findViewById(R.id.smallliketoday);
+        smallheart.setVisibility(View.VISIBLE);
+        smallheart.startAnimation(AnimationUtils.loadAnimation(this,R.anim.heart_up));
+        smallheart.setVisibility(View.INVISIBLE);
+
+
+        TextView liketext = (TextView)findViewById(R.id.liketodaytext);
+        liketext.setText(MainActivity.like);
+
     }
 }

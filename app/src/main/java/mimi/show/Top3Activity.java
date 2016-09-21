@@ -49,7 +49,6 @@ public class Top3Activity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.top3Title);
         textView.setTypeface(Typeface.createFromAsset(getAssets(), "pencil.ttf"));
 
-
         textView = (TextView) findViewById(R.id.tag1text);
         textView.setTypeface(Typeface.createFromAsset(getAssets(), "pencil.ttf"));
 
@@ -72,10 +71,7 @@ public class Top3Activity extends AppCompatActivity {
 public void onButtonLike(View v){
     ImageView smallheart = (ImageView)findViewById(R.id.smalllike);
     smallheart.setVisibility(View.VISIBLE);
-
-
     smallheart.startAnimation(AnimationUtils.loadAnimation(this,R.anim.heart_up));
-
     smallheart.setVisibility(View.INVISIBLE);
 
 }

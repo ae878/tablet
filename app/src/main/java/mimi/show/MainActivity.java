@@ -81,16 +81,14 @@ public class MainActivity extends AppCompatActivity {
     // permission request codes need to be < 256
     private static final int RC_HANDLE_CAMERA_PERM = 2;
 
-
-    TextView textView;
     LinearLayout buttonLayout;
     public static today_data Today_DATA = new today_data();
 
-    int num = 50;
     static String[] img_dir;
-
+    static String like;
     static String[] img_dir2;
     static String myResult;
+    static String testmyResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         send();
+        testsend();
         setContentView(R.layout.activity_main);
 
         mPreview = (CameraSourcePreview) findViewById(R.id.preview);
@@ -111,8 +110,6 @@ public class MainActivity extends AppCompatActivity {
             requestCameraPermission();
         }
 
-        textView = (TextView) findViewById(R.id.title);
-        textView.setTypeface(Typeface.createFromAsset(getAssets(), "Tayle_B.ttf"));
         Today_DATA.img_url = "http://icon.daumcdn.net/w/icon/1606/30/105915014.png";
         buttonLayout = (LinearLayout) findViewById(R.id.buttonLayout);
         mHandler.sendEmptyMessage(0);
@@ -419,7 +416,7 @@ public class MainActivity extends AppCompatActivity {
                         builder.append(str + "\n");                     // View에 표시하기 위해 라인 구분자 추가
                     }
                     myResult = builder.toString();                       // 전송결과를 전역 변수에 저장
-                    System.out.print("HHHHHHHHHHqq"+myResult);
+                    System.out.println("HHHHHHHHHHqq"+myResult);
                     doJSONParser();
 
                 } catch (MalformedURLException e) {
@@ -440,12 +437,14 @@ public class MainActivity extends AppCompatActivity {
           JSONArray jarray = new JSONArray(myResult);   // JSONArray 생성
           for (int i = 0; i < jarray.length(); i++) {
               JSONObject jObject = jarray.getJSONObject(i);  // JSONObject 추출
-              System.out.println(jObject);
+              like=jObject.getString("like");
               img_dir[i] = "http://52.78.68.136/" + jObject.getString("img_dir");
           }
       } catch (JSONException e) {
           e.printStackTrace();
       }
+
+
   }
 
 
@@ -484,7 +483,7 @@ public class MainActivity extends AppCompatActivity {
                     while ((str = reader.readLine()) != null) {       // 서버에서 라인단위로 보내줄 것이므로 라인단위로 읽는다
                         builder.append(str + "\n");                     // View에 표시하기 위해 라인 구분자 추가
                     }
-                    myResult = builder.toString();                       // 전송결과를 전역 변수에 저장
+                    testmyResult = builder.toString();                       // 전송결과를 전역 변수에 저장
 
                     testdoJSONParser();
 
@@ -503,7 +502,7 @@ public class MainActivity extends AppCompatActivity {
         img_dir2=new String[50];
 
         try {
-            JSONArray jarray = new JSONArray(myResult);   // JSONArray 생성
+            JSONArray jarray = new JSONArray(testmyResult);   // JSONArray 생성
             for (int i = 0; i < jarray.length(); i++) {
                 JSONObject jObject = jarray.getJSONObject(i);  // JSONObject 추출
                 System.out.println(jObject);

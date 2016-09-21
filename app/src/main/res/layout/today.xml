@@ -30,7 +30,46 @@
         android:src="@drawable/back"
         android:onClick="onButtonBackClicked"/>
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true">
 
+        <ImageView
+            android:layout_width="320px"
+            android:layout_height="260px"
+            android:layout_marginRight="100px"
+            android:layout_marginBottom="100px"
+            android:background="@drawable/like"
+            android:onClick="onButtonLike"
+            android:id="@+id/liketoday"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@id/liketoday"
+            android:layout_alignBottom="@id/liketoday"
+            android:layout_alignTop="@id/liketoday"
+            android:layout_alignRight="@id/liketoday"
+            android:textSize="60px"
+            android:textColor="#ffffff"
+            android:id="@+id/liketodaytext"
+            android:gravity="center"
+            android:onClick="onButtonLikeToday"
+            />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="100px"
+        android:layout_marginBottom="100px"
+        android:background="@drawable/like"
+        android:id="@+id/smallliketoday"
+        android:visibility="invisible"/>
 
 </RelativeLayout>
 
