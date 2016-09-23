@@ -87,8 +87,11 @@ public class MainActivity extends AppCompatActivity {
     static String[] img_dir;
     static String like;
     static String[] img_dir2;
+    static String[] img_dir3;
     static String myResult;
     static String testmyResult;
+    static String bestmyResult;
+    static String itemName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
         send();
         testsend();
+        bestsend();
         setContentView(R.layout.activity_main);
 
         mPreview = (CameraSourcePreview) findViewById(R.id.preview);
@@ -416,7 +420,7 @@ public class MainActivity extends AppCompatActivity {
                         builder.append(str + "\n");                     // View에 표시하기 위해 라인 구분자 추가
                     }
                     myResult = builder.toString();                       // 전송결과를 전역 변수에 저장
-                    System.out.println("HHHHHHHHHHqq"+myResult);
+                    System.out.println("today"+myResult);
                     doJSONParser();
 
                 } catch (MalformedURLException e) {
@@ -437,6 +441,7 @@ public class MainActivity extends AppCompatActivity {
           JSONArray jarray = new JSONArray(myResult);   // JSONArray 생성
           for (int i = 0; i < jarray.length(); i++) {
               JSONObject jObject = jarray.getJSONObject(i);  // JSONObject 추출
+              itemName = jObject.getString("item_name");
               like=jObject.getString("like");
               img_dir[i] = "http://52.78.68.136/" + jObject.getString("img_dir");
           }
@@ -484,7 +489,7 @@ public class MainActivity extends AppCompatActivity {
                         builder.append(str + "\n");                     // View에 표시하기 위해 라인 구분자 추가
                     }
                     testmyResult = builder.toString();                       // 전송결과를 전역 변수에 저장
-
+                    System.out.println("test"+testmyResult);
                     testdoJSONParser();
 
                 } catch (MalformedURLException e) {
@@ -497,22 +502,91 @@ public class MainActivity extends AppCompatActivity {
         }.start();
     }
 
-    public static void testdoJSONParser(){
+    public static void testdoJSONParser() {
 
-        img_dir2=new String[50];
+        img_dir2 = new String[50];
 
         try {
             JSONArray jarray = new JSONArray(testmyResult);   // JSONArray 생성
             for (int i = 0; i < jarray.length(); i++) {
                 JSONObject jObject = jarray.getJSONObject(i);  // JSONObject 추출
                 System.out.println(jObject);
-                img_dir2[i] ="http://52.78.68.136/"+ jObject.getString("img_dir");
+                img_dir2[i] = "http://52.78.68.136/" + jObject.getString("img_dir");
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+        public static void bestsend() {
+
+            String sendData = null;
+            new Thread() {
+                public void run() {
+                    try {
+
+                        URL url = new URL("http://52.78.68.136/get_bestable_page_data");       // URL 설정
+                        HttpURLConnection http = (HttpURLConnection) url.openConnection();   // 접속
+                        //--------------------------
+                        //   전송 모드 설정 - 기본적인 설정이다
+                        //--------------------------
+                        http.setDefaultUseCaches(false);
+                        http.setDoInput(true);                         // 서버에서 읽기 모드 지정
+                        http.setDoOutput(true);                       // 서버로 쓰기 모드 지정
+                        http.setRequestMethod("POST");
+
+                        http.setRequestProperty("content-type", "application/x-www-form-urlencoded");
+                        //--------------------------
+                        //   서버로 값 전송
+                        //--------------------------
+                        StringBuffer buffer = new StringBuffer();
+
+                        OutputStreamWriter outStream = new OutputStreamWriter(http.getOutputStream(), "EUC-KR"); //넘어감
+                        PrintWriter writer = new PrintWriter(outStream);
+                        writer.write(buffer.toString());
+                        writer.flush();
+
+                        InputStreamReader tmp = new InputStreamReader(http.getInputStream(), "EUC-KR");
+                        BufferedReader reader = new BufferedReader(tmp);
+                        StringBuilder builder = new StringBuilder();
+                        String str;
+                        while ((str = reader.readLine()) != null) {       // 서버에서 라인단위로 보내줄 것이므로 라인단위로 읽는다
+                            builder.append(str + "\n");                     // View에 표시하기 위해 라인 구분자 추가
+                        }
+                        bestmyResult = builder.toString();                       // 전송결과를 전역 변수에 저장
+                        System.out.println("best"+bestmyResult);
+                        bestdoJSONParser();
+
+                    } catch (MalformedURLException e) {
+                        //
+                    } catch (IOException e) {
+                        System.out.println(e);
+                    }
+                }
+
+            }.start();
+        }
+
+
+    public static void bestdoJSONParser(){
+
+        img_dir3=new String[50];
+
+        try {
+            JSONArray jarray = new JSONArray(bestmyResult);   // JSONArray 생성
+            for (int i = 0; i < jarray.length(); i++) {
+                JSONObject jObject = jarray.getJSONObject(i);  // JSONObject 추출
+                System.out.println(jObject);
+                img_dir3[i] ="http://52.78.68.136/"+ jObject.getString("img_dir");
             }
         }catch (JSONException e) {
             e.printStackTrace();
         }
 
-}
+
+    }
 
 
 

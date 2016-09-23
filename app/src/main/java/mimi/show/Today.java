@@ -12,6 +12,19 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class Today extends AppCompatActivity {
     CountDownTimer timer = null;
     @Override
@@ -71,8 +84,12 @@ public class Today extends AppCompatActivity {
     }
 
 
+
     public void onButtonLikeToday(View v){
 
+
+
+        send();
         ImageView smallheart = (ImageView)findViewById(R.id.smallliketoday);
         smallheart.setVisibility(View.VISIBLE);
         smallheart.startAnimation(AnimationUtils.loadAnimation(this,R.anim.heart_up));
@@ -82,5 +99,62 @@ public class Today extends AppCompatActivity {
         TextView liketext = (TextView)findViewById(R.id.liketodaytext);
         liketext.setText(MainActivity.like);
 
+    }
+
+
+
+    public static void send() {
+
+        String sendData = null;
+        final String itemName = MainActivity.itemName;
+        new Thread() {
+            public void run() {
+                try {
+
+                    URL url = new URL("http://52.78.68.136/liked");       // URL 설정
+                    HttpURLConnection http = (HttpURLConnection) url.openConnection();   // 접속
+                    //--------------------------
+                    //   전송 모드 설정 - 기본적인 설정이다
+                    //--------------------------
+                    http.setDefaultUseCaches(false);
+                    http.setDoInput(true);                         // 서버에서 읽기 모드 지정
+                    http.setDoOutput(true);                       // 서버로 쓰기 모드 지정
+                    http.setRequestMethod("POST");
+
+                    http.setRequestProperty("content-type", "application/x-www-form-urlencoded");
+                    //--------------------------
+                    //   서버로 값 전송
+                    //--------------------------
+                    StringBuffer buffer = new StringBuffer();
+
+                    JSONObject job = new JSONObject();
+
+
+                    job.put("item_name",itemName);
+
+                    OutputStream os = http.getOutputStream();
+                    os.write(job.toString().getBytes());
+                    os.flush();
+
+                    InputStreamReader tmp = new InputStreamReader(http.getInputStream(), "EUC-KR");
+                    BufferedReader reader = new BufferedReader(tmp);
+                    StringBuilder builder = new StringBuilder();
+                    String str;
+                    while ((str = reader.readLine()) != null) {       // 서버에서 라인단위로 보내줄 것이므로 라인단위로 읽는다
+                        builder.append(str + "\n");                     // View에 표시하기 위해 라인 구분자 추가
+                    }
+                    // 전송결과를 전역 변수에 저장
+
+
+                } catch (MalformedURLException e) {
+                    //
+                } catch (IOException e) {
+                    System.out.println(e);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }.start();
     }
 }

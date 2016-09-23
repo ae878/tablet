@@ -1,44 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="23"
     density="xhdpi"
-    format="7"
-    timestamp="28033031249066"
-    token="-2800444364968197226" >
+    format="8"
+    plugin-version="2.2.0"
+    timestamp="83671245907843"
+    token="-4238204449312171192"
+    verifier="MANIFEST_FILE_CHANGE" >
 
     <task
         name="javac"
-        duration="2247" />
+        duration="957" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="376" />
+        duration="271" />
     <task
         name="verifier"
-        duration="92" />
+        duration="32" />
 
     <artifact
-        location="C:\Users\mijin\AndroidStudioProjects\Show\app\build\intermediates\res\resources-debug.ap_"
-        type="RESOURCES" />
-    <artifact
-        location="C:\Users\mijin\AndroidStudioProjects\Show\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_1\classes.dex"
-        type="DEX" />
+        location="C:\Users\mijin\Desktop\Show\app\build\outputs\apk\app-debug.apk"
+        type="MAIN" />
 
-    <build timestamp="27216754096640" >
+    <build
+        timestamp="83671245907843"
+        verifier="MANIFEST_FILE_CHANGE" >
         <artifact
-            location="C:\Users\mijin\AndroidStudioProjects\Show\app\build\outputs\apk\app-debug.apk"
+            location="C:\Users\mijin\Desktop\Show\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
-    </build>
-    <build timestamp="28033031249066" >
-        <artifact
-            location="C:\Users\mijin\AndroidStudioProjects\Show\app\build\intermediates\res\resources-debug.ap_"
-            type="RESOURCES" />
-        <artifact
-            location="C:\Users\mijin\AndroidStudioProjects\Show\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_1\classes.dex"
-            type="DEX" />
     </build>
 
 </instant-run>

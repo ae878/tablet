@@ -110,11 +110,11 @@ public class ScreenViewFlipper extends RelativeLayout implements View.OnTouchLis
 
             ImageView imageSample = new ImageView(context);
             switch (i) {
-                 case 0 : imageSample.setBackgroundResource(R.drawable.kakao3);
+                 case 0 : imageSample.setImageDrawable(MainActivity.fetchImage(MainActivity.img_dir3[0]));
                     break;
-                case 1 : imageSample.setBackgroundResource(R.drawable.kakao4);
+                case 1 : imageSample.setBackground(MainActivity.fetchImage(MainActivity.img_dir3[1]));
                     break;
-                case 2 : imageSample.setBackgroundResource(R.drawable.kakao2);
+                case 2 : imageSample.setBackground(MainActivity.fetchImage(MainActivity.img_dir3[2]));
                     break;
             }
 

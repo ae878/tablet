@@ -8,13 +8,6 @@
 
   >
 
-    <ViewFlipper
-        android:layout_width="1888px"
-        android:layout_height="1140px"
-        android:layout_marginLeft="80px"
-        android:layout_marginTop="316px"
-        android:id="@+id/top3flipper"></ViewFlipper>
-
     <TextView
         android:id="@+id/top3Title"
         android:layout_width="match_parent"
@@ -170,4 +163,12 @@
         android:background="@drawable/like"
         android:id="@+id/smalllike"
         android:visibility="invisible"/>
+
+    <ViewFlipper
+        android:layout_width="1888px"
+        android:layout_height="1140px"
+        android:id="@+id/top3flipper"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"></ViewFlipper>
 </RelativeLayout>

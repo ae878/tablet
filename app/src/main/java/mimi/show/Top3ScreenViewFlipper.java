@@ -19,6 +19,8 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 
+import com.androidquery.AQuery;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,6 +36,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouchListener {
+    private AQuery aq = new AQuery( this );
+
 
     public static int countIndexes = 3;
     RelativeLayout tagLayout;
@@ -183,8 +187,7 @@ public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouc
                  ImageView imageSample = new ImageView(context);
             switch (i) {
 
-                case 0 :  imageSample.setImageDrawable(MainActivity.fetchImage(MainActivity.img_dir2[0]));
-                            System.out.println("핳핳"+MainActivity.img_dir2[0]);
+                case 0 :  aq.id(imageSample).image(MainActivity.img_dir2[0]);
                           break;
                 case 1 : imageSample.setImageDrawable(MainActivity.fetchImage(MainActivity.img_dir2[1]));;
 
