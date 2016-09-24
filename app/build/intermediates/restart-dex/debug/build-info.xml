@@ -4,33 +4,54 @@
     density="xhdpi"
     format="8"
     plugin-version="2.2.0"
-    timestamp="83671245907843"
+    timestamp="172890555957712"
     token="-4238204449312171192"
-    verifier="MANIFEST_FILE_CHANGE" >
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="957" />
+        duration="723" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="971" />
     <task
         name="instant-run-transform"
-        duration="271" />
+        duration="94" />
     <task
         name="verifier"
-        duration="32" />
+        duration="13" />
 
     <artifact
-        location="C:\Users\mijin\Desktop\Show\app\build\outputs\apk\app-debug.apk"
-        type="MAIN" />
+        location="C:\Users\mijin\Desktop\Show\app\build\intermediates\reload-dex\debug\classes.dex"
+        type="RELOAD_DEX" />
 
     <build
-        timestamp="83671245907843"
-        verifier="MANIFEST_FILE_CHANGE" >
+        timestamp="172094714592243"
+        verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\mijin\Desktop\Show\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
+    </build>
+    <build
+        timestamp="172252436770187"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\mijin\Desktop\Show\app\build\intermediates\builds\debug\172252436770187\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="172334276691817"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\mijin\Desktop\Show\app\build\intermediates\builds\debug\172334276691817\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="172890555957712"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\mijin\Desktop\Show\app\build\intermediates\reload-dex\debug\classes.dex"
+            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

@@ -68,13 +68,13 @@ public class Top3Activity extends AppCompatActivity {
     }
 
 
-public void onButtonLike(View v){
-    ImageView smallheart = (ImageView)findViewById(R.id.smalllike);
-    smallheart.setVisibility(View.VISIBLE);
-    smallheart.startAnimation(AnimationUtils.loadAnimation(this,R.anim.heart_up));
-    smallheart.setVisibility(View.INVISIBLE);
+    public void onButtonLike(View v){
+        ImageView smallheart = (ImageView)findViewById(R.id.smalllike);
+        smallheart.setVisibility(View.VISIBLE);
+        smallheart.startAnimation(AnimationUtils.loadAnimation(this,R.anim.heart_up));
+        smallheart.setVisibility(View.INVISIBLE);
 
-}
+    }
     public void onButtonBackClicked(View v){
 
         finish();

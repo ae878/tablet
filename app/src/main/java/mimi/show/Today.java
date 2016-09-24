@@ -29,9 +29,11 @@ public class Today extends AppCompatActivity {
     CountDownTimer timer = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        send();
         setContentView(R.layout.today);
 
         ImageView test = (ImageView) findViewById(R.id.test);
@@ -86,10 +88,10 @@ public class Today extends AppCompatActivity {
 
 
     public void onButtonLikeToday(View v){
+        timerReset();
 
 
-
-        send();
+        MainActivity.send();
         ImageView smallheart = (ImageView)findViewById(R.id.smallliketoday);
         smallheart.setVisibility(View.VISIBLE);
         smallheart.startAnimation(AnimationUtils.loadAnimation(this,R.anim.heart_up));
@@ -131,6 +133,7 @@ public class Today extends AppCompatActivity {
 
 
                     job.put("item_name",itemName);
+                    System.out.println(itemName);
 
                     OutputStream os = http.getOutputStream();
                     os.write(job.toString().getBytes());

@@ -276,6 +276,5 @@ public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouc
 
         return true;
     }
-
 }
 

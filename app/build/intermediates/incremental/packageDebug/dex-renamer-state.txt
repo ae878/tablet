@@ -1,4 +1,4 @@
-#Fri Sep 23 21:27:02 KST 2016
+#Sat Sep 24 22:00:36 KST 2016
 base.0=C\:\\Users\\mijin\\Desktop\\Show\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_4366df7773c37098c800956fcc6b3cb7377fc7b2
 renamed.1=classes2.dex
 renamed.0=classes.dex
