@@ -6,12 +6,12 @@
     android:orientation="vertical"
     android:background="@drawable/background"
     >
-<mimi.show.Top3ScreenViewFlipper
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    <mimi.show.Top3ScreenViewFlipper
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
-</mimi.show.Top3ScreenViewFlipper>
+    </mimi.show.Top3ScreenViewFlipper>
 
 
 </LinearLayout>

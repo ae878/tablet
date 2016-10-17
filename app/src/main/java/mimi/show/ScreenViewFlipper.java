@@ -86,7 +86,7 @@ public class ScreenViewFlipper extends RelativeLayout implements View.OnTouchLis
         });
 
 
-       LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT);
         params.width=40;
@@ -95,7 +95,7 @@ public class ScreenViewFlipper extends RelativeLayout implements View.OnTouchLis
         params.leftMargin = 50;
         this.setLayoutParams(params);
 
-       indexButtons = new ImageView[countIndexes];
+        indexButtons = new ImageView[countIndexes];
         views = new ImageView[countIndexes];
 
         for(int i=0; i< countIndexes;i++){
@@ -110,7 +110,7 @@ public class ScreenViewFlipper extends RelativeLayout implements View.OnTouchLis
 
             ImageView imageSample = new ImageView(context);
             switch (i) {
-                 case 0 : imageSample.setImageDrawable(MainActivity.fetchImage(MainActivity.img_dir3[0]));
+                case 0 : imageSample.setImageDrawable(MainActivity.fetchImage(MainActivity.img_dir3[0]));
                     break;
                 case 1 : imageSample.setBackground(MainActivity.fetchImage(MainActivity.img_dir3[1]));
                     break;
@@ -121,15 +121,15 @@ public class ScreenViewFlipper extends RelativeLayout implements View.OnTouchLis
             views[i] = imageSample;
 
             flipper.addView(views[i]);
-         }
+        }
     }
     public void updateIndexes() {
         for(int i = 0; i < countIndexes; i++) {
             if (i == currentIndex) {
-            indexButtons[i].setImageResource(R.drawable.swipe_select);
+                indexButtons[i].setImageResource(R.drawable.swipe_select);
 
             }else{
-               indexButtons[i].setImageResource(R.drawable.swipe);
+                indexButtons[i].setImageResource(R.drawable.swipe);
 
             }
         }
@@ -194,4 +194,3 @@ public class ScreenViewFlipper extends RelativeLayout implements View.OnTouchLis
 
 
 }
-

@@ -3,66 +3,48 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\mijin\Desktop\Show\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.4.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.0"
-        sha1="8a36d229011e75f0caef408e1adf0d3fd4d94e02">
-        <dex dex="C:\Users\mijin\Desktop\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-9.4.0_40b09ef2c0bafd67302a55c451e8a9182f1b4e00\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\mijin\Desktop\Show\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.0"
-        sha1="54ceef306dbaa614f3b648e975b1b0cff35d5be9">
-        <dex dex="C:\Users\mijin\Desktop\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_4366df7773c37098c800956fcc6b3cb7377fc7b2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\mijin\Desktop\Show\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.0"
-        sha1="3dee4ce5844d39d843d503fb8fe04e51e5bfffac">
-        <dex dex="C:\Users\mijin\Desktop\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-9.4.0_c700a5f4d0bb3f00fde2b381194a1cbd2fe79535\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\mijin\Desktop\Show\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\9.4.0\jars\classes.jar"
+        jar="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\9.4.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.0"
         sha1="670df81539ab71918d49b186598b7eff08ef6563">
-        <dex dex="C:\Users\mijin\Desktop\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-vision-9.4.0_68e8f2c3ca30cd452576a20f96a04031b54b7af2\classes.dex" />
+        <dex dex="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-vision-9.4.0_5ab46aaf82c5c9858272c78fe9d966b96f8f4972\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\mijin\Desktop\Show\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.0"
-        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
-        <dex dex="C:\Users\mijin\Desktop\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.4.0_f3eb1b6d146285025cff3e97b4b6a47e90574f20\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\mijin\Desktop\Show\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.0"
-        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="C:\Users\mijin\Desktop\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_84297c1b53002047874cadace92e16882dffa031\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\mijin\Desktop\Show\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jar="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.0"
         sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="C:\Users\mijin\Desktop\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.4.0_51a694a2bdb9fdd8b4eebae251d7ba9d836bf27b\classes.dex" />
+        <dex dex="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.4.0_a5b2518c5f0bd9c29a26b1051255102b5251f718\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.4.0_0b011331b2fee5df3fd1d77ae5a51c8dd67baebf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="618485fef3ebe12127f7622abbc9b5b39057b5c2">
+        <dex dex="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-9.4.0_ace71ddd2dbba1efc321779e1d7e1760ee98e784\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="3dee4ce5844d39d843d503fb8fe04e51e5bfffac">
+        <dex dex="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-9.4.0_a118453a96d2455b8471b39b9b88e3f5cfe48569\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -71,7 +53,34 @@
         optimize="true"
         revision="24.0.0"
         sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
-        <dex dex="C:\Users\mijin\Desktop\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_f1bc83949baf2a14472a48abd26c3c1955dabeb7\classes.dex" />
+        <dex dex="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_f1bc83949baf2a14472a48abd26c3c1955dabeb7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="8a36d229011e75f0caef408e1adf0d3fd4d94e02">
+        <dex dex="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-9.4.0_2ea952bb6994cc02e856475e73af212dcc191403\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.4.0_50b2fe502b62efb0204191012becca22bfbc63ba\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_24bdafb6968884a9cf63bbb830c3e3033810df6e\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -80,43 +89,34 @@
         optimize="true"
         revision="24.0.0"
         sha1="fff82e4e1e56b60d6eb1d5487dbd3d3b526b635f">
-        <dex dex="C:\Users\mijin\Desktop\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\android-query-0.25.9_13ec094137292601c7ae0253de1fd703706fc1f8\classes.dex" />
+        <dex dex="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\android-query-0.25.9_13ec094137292601c7ae0253de1fd703706fc1f8\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\mijin\Desktop\Show\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\jars\classes.jar"
+        jar="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.0"
-        sha1="618485fef3ebe12127f7622abbc9b5b39057b5c2">
-        <dex dex="C:\Users\mijin\Desktop\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-9.4.0_2737cf37129ff5c056c9ed1497fbb9f614c2f9c4\classes.dex" />
+        sha1="d1e13ffced975abf58df754505dd9c4648c262eb">
+        <dex dex="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_6d5582bace7f0a8333d2149d05cc9f52a23c27b5\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\mijin\Desktop\Show\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.0"
-        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
-        <dex dex="C:\Users\mijin\Desktop\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.4.0_b01183a93713aa2bc4060d8ca2eb6c2a814c5031\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\mijin\Desktop\Show\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jar="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.0"
         sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
-        <dex dex="C:\Users\mijin\Desktop\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_64d4c60a95018b5a4960b66847880c4b87169276\classes.dex" />
+        <dex dex="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_285839229fb759d32501dd34c0a818a0c043ef60\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\mijin\Desktop\Show\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.0"
-        sha1="1691c1132c7c5e032f43c6ff4faf20e43de557cd">
-        <dex dex="C:\Users\mijin\Desktop\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_2c5a5b1c7dd4800fdbb818eb360c6792b6b11d24\classes.dex" />
+        sha1="cb6a796e4768f371fb2a455408b8a4fe380e69a0">
+        <dex dex="C:\Users\mijin\AndroidProject\Show\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_92a3f71220a2d1a0558d5251950a33d34c60f15e\classes.dex" />
     </item>
 
 </items>

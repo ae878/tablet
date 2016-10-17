@@ -20,14 +20,15 @@ public final class R {
         public static final int abc_slide_out_bottom=0x7f050008;
         public static final int abc_slide_out_top=0x7f050009;
         public static final int heart_up=0x7f05000a;
-        public static final int push_down_in=0x7f05000b;
-        public static final int push_down_out=0x7f05000c;
-        public static final int push_left_in=0x7f05000d;
-        public static final int push_left_out=0x7f05000e;
-        public static final int push_right_in=0x7f05000f;
-        public static final int push_right_out=0x7f050010;
-        public static final int push_up_in=0x7f050011;
-        public static final int push_up_out=0x7f050012;
+        public static final int heart_up2=0x7f05000b;
+        public static final int push_down_in=0x7f05000c;
+        public static final int push_down_out=0x7f05000d;
+        public static final int push_left_in=0x7f05000e;
+        public static final int push_left_out=0x7f05000f;
+        public static final int push_right_in=0x7f050010;
+        public static final int push_right_out=0x7f050011;
+        public static final int push_up_in=0x7f050012;
+        public static final int push_up_out=0x7f050013;
     }
     public static final class attr {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -1752,17 +1753,19 @@ containing a value of this type.
         public static final int kakao3=0x7f02007b;
         public static final int kakao4=0x7f02007c;
         public static final int like=0x7f02007d;
-        public static final int notification_template_icon_bg=0x7f020088;
-        public static final int redbean=0x7f02007e;
-        public static final int sample=0x7f02007f;
-        public static final int sample2=0x7f020080;
-        public static final int sample3=0x7f020081;
-        public static final int swipe=0x7f020082;
-        public static final int swipe_select=0x7f020083;
-        public static final int tab_1=0x7f020084;
-        public static final int tab_2=0x7f020085;
-        public static final int tab_3=0x7f020086;
-        public static final int xml_border=0x7f020087;
+        public static final int like2=0x7f02007e;
+        public static final int like2push=0x7f02007f;
+        public static final int notification_template_icon_bg=0x7f02008a;
+        public static final int redbean=0x7f020080;
+        public static final int sample=0x7f020081;
+        public static final int sample2=0x7f020082;
+        public static final int sample3=0x7f020083;
+        public static final int swipe=0x7f020084;
+        public static final int swipe_select=0x7f020085;
+        public static final int tab_1=0x7f020086;
+        public static final int tab_2=0x7f020087;
+        public static final int tab_3=0x7f020088;
+        public static final int xml_border=0x7f020089;
     }
     public static final class id {
         public static final int action0=0x7f0c0061;
@@ -1818,8 +1821,10 @@ containing a value of this type.
         public static final int image=0x7f0c002e;
         public static final int info=0x7f0c006c;
         public static final int light=0x7f0c0028;
-        public static final int like=0x7f0c007f;
-        public static final int liketext=0x7f0c0080;
+        public static final int like=0x7f0c0080;
+        public static final int liketext1=0x7f0c0081;
+        public static final int liketext2=0x7f0c0082;
+        public static final int liketext3=0x7f0c0083;
         public static final int liketoday=0x7f0c0073;
         public static final int liketodaytext=0x7f0c0074;
         public static final int line1=0x7f0c0066;
@@ -1859,7 +1864,7 @@ containing a value of this type.
         public static final int showCustom=0x7f0c000f;
         public static final int showHome=0x7f0c0010;
         public static final int showTitle=0x7f0c0011;
-        public static final int smalllike=0x7f0c0081;
+        public static final int smalllike=0x7f0c0084;
         public static final int smallliketoday=0x7f0c0075;
         public static final int spacer=0x7f0c0034;
         public static final int split_action_bar=0x7f0c0007;
@@ -1870,13 +1875,13 @@ containing a value of this type.
         public static final int status_bar_latest_event_content=0x7f0c0063;
         public static final int submit_area=0x7f0c0054;
         public static final int tabMode=0x7f0c000b;
-        public static final int tag1=0x7f0c0079;
-        public static final int tag1text=0x7f0c007a;
-        public static final int tag2=0x7f0c007b;
-        public static final int tag2text=0x7f0c007c;
-        public static final int tag3=0x7f0c007d;
-        public static final int tag3text=0x7f0c007e;
-        public static final int tagLayout=0x7f0c0078;
+        public static final int tag1=0x7f0c007a;
+        public static final int tag1text=0x7f0c007b;
+        public static final int tag2=0x7f0c007c;
+        public static final int tag2text=0x7f0c007d;
+        public static final int tag3=0x7f0c007e;
+        public static final int tag3text=0x7f0c007f;
+        public static final int tagLayout=0x7f0c0079;
         public static final int test=0x7f0c0071;
         public static final int text=0x7f0c006b;
         public static final int text2=0x7f0c0069;
@@ -1889,7 +1894,7 @@ containing a value of this type.
         public static final int todaymenu=0x7f0c005e;
         public static final int top3=0x7f0c0076;
         public static final int top3Title=0x7f0c0077;
-        public static final int top3flipper=0x7f0c0082;
+        public static final int top3flipper=0x7f0c0078;
         public static final int topPanel=0x7f0c0036;
         public static final int up=0x7f0c0008;
         public static final int useLogo=0x7f0c0012;

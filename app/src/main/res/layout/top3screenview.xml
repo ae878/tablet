@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:id="@+id/top3"
 
-  >
+    >
 
     <TextView
         android:id="@+id/top3Title"
@@ -19,7 +19,7 @@
         android:shadowDx="5"
         android:shadowDy="5"
         android:textSize="136.8px"
-        android:paddingTop="130px"
+        android:paddingTop="120px"
         android:gravity="center_horizontal"/>
 
 
@@ -33,7 +33,15 @@
         android:src="@drawable/back"
         android:onClick="onButtonBackClicked"/>
 
-
+    <ViewFlipper
+        android:layout_width="1888px"
+        android:layout_height="1140px"
+        android:id="@+id/top3flipper"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="80px"
+        android:layout_marginBottom="80px"></ViewFlipper>
 
     <RelativeLayout
         android:layout_width="400px"
@@ -123,33 +131,93 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true">
+        android:layout_height="wrap_content">
+
 
         <ImageView
-            android:layout_width="320px"
-            android:layout_height="260px"
+            android:layout_width="330px"
+            android:layout_height="330px"
+            android:background="@drawable/like2"
+
+            android:id="@+id/like"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentRight="true"
             android:layout_marginRight="100px"
-            android:layout_marginBottom="100px"
-            android:background="@drawable/like"
-            android:onClick="onButtonLike"
-            android:id="@+id/like"/>
+            android:layout_marginTop="570dp" />
+
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignLeft="@id/like"
-            android:layout_alignBottom="@id/like"
-            android:layout_alignTop="@id/like"
-            android:layout_alignRight="@id/like"
-            android:textSize="60px"
-            android:textColor="#ffffff"
-            android:text="♥568"
-            android:id="@+id/liketext"
-            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:textColor="#000000"
+            android:textSize="80px"
+            android:text="hi"
+
+            android:id="@+id/liketext1"
+            android:paddingRight="230dp"
+            android:paddingBottom="50dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="❤ "
+            android:textSize="70px"
+
+            android:paddingBottom="50dp"
+            android:paddingRight="320dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:textColor="#000000"
+            android:textSize="80px"
+            android:text="hi"
             android:onClick="onButtonLike"
-            />
+            android:id="@+id/liketext2"
+            android:paddingRight="230dp"
+            android:paddingBottom="50dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="❤ "
+            android:textSize="70px"
+            android:onClick="onButtonLike"
+            android:paddingBottom="50dp"
+            android:paddingRight="320dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:textColor="#000000"
+            android:textSize="80px"
+            android:text="hi"
+            android:onClick="onButtonLike"
+            android:id="@+id/liketext3"
+            android:paddingRight="230dp"
+            android:paddingBottom="50dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="❤ "
+            android:textSize="70px"
+            android:onClick="onButtonLike"
+            android:paddingBottom="50dp"
+            android:paddingRight="320dp" />
+
     </RelativeLayout>
 
 
@@ -164,11 +232,5 @@
         android:id="@+id/smalllike"
         android:visibility="invisible"/>
 
-    <ViewFlipper
-        android:layout_width="1888px"
-        android:layout_height="1140px"
-        android:id="@+id/top3flipper"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"></ViewFlipper>
+
 </RelativeLayout>

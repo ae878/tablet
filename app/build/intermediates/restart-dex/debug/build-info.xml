@@ -1,57 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
+    abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="23"
     density="xhdpi"
     format="8"
-    plugin-version="2.2.0"
-    timestamp="172890555957712"
-    token="-4238204449312171192"
-    verifier="COMPATIBLE" >
+    plugin-version="2.2.1"
+    timestamp="278845328121880"
+    token="-2750505931676109402"
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="723" />
+        duration="0" />
     <task
         name="instant-run-dex"
-        duration="971" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="94" />
+        duration="0" />
     <task
         name="verifier"
-        duration="13" />
+        duration="0" />
 
     <artifact
-        location="C:\Users\mijin\Desktop\Show\app\build\intermediates\reload-dex\debug\classes.dex"
-        type="RELOAD_DEX" />
+        location="C:\Users\mijin\AndroidProject\Show\app\build\outputs\apk\app-debug.apk"
+        type="MAIN" />
 
     <build
-        timestamp="172094714592243"
+        timestamp="278845328121880"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\mijin\Desktop\Show\app\build\outputs\apk\app-debug.apk"
+            location="C:\Users\mijin\AndroidProject\Show\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="172252436770187"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\mijin\Desktop\Show\app\build\intermediates\builds\debug\172252436770187\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="172334276691817"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\mijin\Desktop\Show\app\build\intermediates\builds\debug\172334276691817\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="172890555957712"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\mijin\Desktop\Show\app\build\intermediates\reload-dex\debug\classes.dex"
-            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

@@ -166,4 +166,3 @@ public class CameraSourcePreview extends ViewGroup {
         return false;
     }
 }
-

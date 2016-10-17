@@ -86,12 +86,14 @@ public class MainActivity extends AppCompatActivity {
 
     static String[] img_dir;
     static String like;
+    static String[] likeTop3;
     static String[] img_dir2;
     static String[] img_dir3;
     static String myResult;
     static String testmyResult;
     static String bestmyResult;
     static String itemName;
+    static String[] itemNameTop3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        send();
+        likesend();
         testsend();
         bestsend();
         setContentView(R.layout.activity_main);
@@ -384,7 +386,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public static void send() {
+    public static void send() { //today
 
         String sendData = null;
         new Thread() {
@@ -433,27 +435,28 @@ public class MainActivity extends AppCompatActivity {
         }.start();
     }
 
-  public static void doJSONParser() {
+    public static void doJSONParser() {
 
-      img_dir = new String[50];
+        img_dir = new String[50];
 
-      try {
-          JSONArray jarray = new JSONArray(myResult);   // JSONArray 생성
-          for (int i = 0; i < jarray.length(); i++) {
-              JSONObject jObject = jarray.getJSONObject(i);  // JSONObject 추출
-              itemName = jObject.getString("item_name");
-              like=jObject.getString("like");
-              img_dir[i] = "http://52.78.68.136/" + jObject.getString("img_dir");
-          }
-      } catch (JSONException e) {
-          e.printStackTrace();
-      }
+        try {
+            JSONArray jarray = new JSONArray(myResult);   // JSONArray 생성
+            for (int i = 0; i < jarray.length(); i++) {
+                JSONObject jObject = jarray.getJSONObject(i);  // JSONObject 추출
+                itemName = jObject.getString ("item_name");
+                like=jObject.getString("like");
 
-
-  }
+                img_dir[i] = "http://52.78.68.136/" + jObject.getString("img_dir");
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
 
-    public static void testsend() {
+    }
+
+
+    public static void testsend() { // main 화면
 
         String sendData = null;
         new Thread() {
@@ -520,54 +523,54 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        public static void bestsend() {
+    public static void bestsend() { //top3 화면
 
-            String sendData = null;
-            new Thread() {
-                public void run() {
-                    try {
+        String sendData = null;
+        new Thread() {
+            public void run() {
+                try {
 
-                        URL url = new URL("http://52.78.68.136/get_bestable_page_data");       // URL 설정
-                        HttpURLConnection http = (HttpURLConnection) url.openConnection();   // 접속
-                        //--------------------------
-                        //   전송 모드 설정 - 기본적인 설정이다
-                        //--------------------------
-                        http.setDefaultUseCaches(false);
-                        http.setDoInput(true);                         // 서버에서 읽기 모드 지정
-                        http.setDoOutput(true);                       // 서버로 쓰기 모드 지정
-                        http.setRequestMethod("POST");
+                    URL url = new URL("http://52.78.68.136/get_bestable_page_data");       // URL 설정
+                    HttpURLConnection http = (HttpURLConnection) url.openConnection();   // 접속
+                    //--------------------------
+                    //   전송 모드 설정 - 기본적인 설정이다
+                    //--------------------------
+                    http.setDefaultUseCaches(false);
+                    http.setDoInput(true);                         // 서버에서 읽기 모드 지정
+                    http.setDoOutput(true);                       // 서버로 쓰기 모드 지정
+                    http.setRequestMethod("POST");
 
-                        http.setRequestProperty("content-type", "application/x-www-form-urlencoded");
-                        //--------------------------
-                        //   서버로 값 전송
-                        //--------------------------
-                        StringBuffer buffer = new StringBuffer();
+                    http.setRequestProperty("content-type", "application/x-www-form-urlencoded");
+                    //--------------------------
+                    //   서버로 값 전송
+                    //--------------------------
+                    StringBuffer buffer = new StringBuffer();
 
-                        OutputStreamWriter outStream = new OutputStreamWriter(http.getOutputStream(), "EUC-KR"); //넘어감
-                        PrintWriter writer = new PrintWriter(outStream);
-                        writer.write(buffer.toString());
-                        writer.flush();
+                    OutputStreamWriter outStream = new OutputStreamWriter(http.getOutputStream(), "EUC-KR"); //넘어감
+                    PrintWriter writer = new PrintWriter(outStream);
+                    writer.write(buffer.toString());
+                    writer.flush();
 
-                        InputStreamReader tmp = new InputStreamReader(http.getInputStream(), "EUC-KR");
-                        BufferedReader reader = new BufferedReader(tmp);
-                        StringBuilder builder = new StringBuilder();
-                        String str;
-                        while ((str = reader.readLine()) != null) {       // 서버에서 라인단위로 보내줄 것이므로 라인단위로 읽는다
-                            builder.append(str + "\n");                     // View에 표시하기 위해 라인 구분자 추가
-                        }
-                        bestmyResult = builder.toString();                       // 전송결과를 전역 변수에 저장
-                        System.out.println("best"+bestmyResult);
-                        bestdoJSONParser();
-
-                    } catch (MalformedURLException e) {
-                        //
-                    } catch (IOException e) {
-                        System.out.println(e);
+                    InputStreamReader tmp = new InputStreamReader(http.getInputStream(), "EUC-KR");
+                    BufferedReader reader = new BufferedReader(tmp);
+                    StringBuilder builder = new StringBuilder();
+                    String str;
+                    while ((str = reader.readLine()) != null) {       // 서버에서 라인단위로 보내줄 것이므로 라인단위로 읽는다
+                        builder.append(str + "\n");                     // View에 표시하기 위해 라인 구분자 추가
                     }
-                }
+                    bestmyResult = builder.toString();                       // 전송결과를 전역 변수에 저장
+                    System.out.println("best"+bestmyResult);
+                    bestdoJSONParser();
 
-            }.start();
-        }
+                } catch (MalformedURLException e) {
+                    //
+                } catch (IOException e) {
+                    System.out.println(e);
+                }
+            }
+
+        }.start();
+    }
 
 
     public static void bestdoJSONParser(){
@@ -578,8 +581,8 @@ public class MainActivity extends AppCompatActivity {
             JSONArray jarray = new JSONArray(bestmyResult);   // JSONArray 생성
             for (int i = 0; i < jarray.length(); i++) {
                 JSONObject jObject = jarray.getJSONObject(i);  // JSONObject 추출
-                System.out.println(jObject);
-                img_dir3[i] ="http://52.78.68.136/"+ jObject.getString("img_dir");
+                img_dir3[i] = "http://52.78.68.136/" + jObject.getString("img_dir");
+
             }
         }catch (JSONException e) {
             e.printStackTrace();
@@ -588,14 +591,85 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public static void likesend() { //top3
+
+        String sendData = null;
+        new Thread() {
+            public void run() {
+                try {
+
+                    URL url = new URL("http://52.78.68.136/get_item_data_sorted_by_liked");       // URL 설정
+                    HttpURLConnection http = (HttpURLConnection) url.openConnection();   // 접속
+                    //--------------------------
+                    //   전송 모드 설정 - 기본적인 설정이다
+                    //--------------------------
+                    http.setDefaultUseCaches(false);
+                    http.setDoInput(true);                         // 서버에서 읽기 모드 지정
+                    http.setDoOutput(true);                       // 서버로 쓰기 모드 지정
+                    http.setRequestMethod("POST");
+
+                    http.setRequestProperty("content-type", "application/x-www-form-urlencoded");
+                    //--------------------------
+                    //   서버로 값 전송
+                    //--------------------------
+                    StringBuffer buffer = new StringBuffer();
+
+                    OutputStreamWriter outStream = new OutputStreamWriter(http.getOutputStream(), "EUC-KR"); //넘어감
+                    PrintWriter writer = new PrintWriter(outStream);
+                    writer.write(buffer.toString());
+                    writer.flush();
+
+                    InputStreamReader tmp = new InputStreamReader(http.getInputStream(), "EUC-KR");
+                    BufferedReader reader = new BufferedReader(tmp);
+                    StringBuilder builder = new StringBuilder();
+                    String str;
+                    while ((str = reader.readLine()) != null) {       // 서버에서 라인단위로 보내줄 것이므로 라인단위로 읽는다
+                        builder.append(str + "\n");                     // View에 표시하기 위해 라인 구분자 추가
+                    }
+                    myResult = builder.toString();                       // 전송결과를 전역 변수에 저장
+                    System.out.println("hearhear"+myResult);
+                    likedoJSONParser();
+
+                } catch (MalformedURLException e) {
+                    //
+                } catch (IOException e) {
+                    System.out.println(e);
+                }
+            }
+
+        }.start();
+    }
+
+    public static void likedoJSONParser() {
+
+        likeTop3 = new String[50];
+        itemNameTop3 = new String[50];
+
+
+        try {
+            JSONArray jarray = new JSONArray(myResult);   // JSONArray 생성
+            for (int i = 0; i < jarray.length(); i++) {
+                JSONObject jObject = jarray.getJSONObject(i);  // JSONObject 추출
+                likeTop3[i]=jObject.getString("like");
+
+                itemNameTop3[i] = jObject.getString ("item_name");
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
 
 
     android.os.Handler mHandler = new android.os.Handler(){
-    public void handleMessage(Message msg){
-        buttonLayout.performClick();
-        mHandler.sendEmptyMessageDelayed(2500, 2500);
+        public void handleMessage(Message msg){
+            buttonLayout.performClick();
+            mHandler.sendEmptyMessageDelayed(2500, 2500);
+        };
     };
-};
     public void onButton3Clicked(View v) {
 
         Intent intent = new Intent(getApplicationContext(), NewActivity.class);
@@ -611,7 +685,3 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-
-
-
-

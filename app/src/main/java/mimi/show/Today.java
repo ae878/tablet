@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.annotation.IntegerRes;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -27,14 +29,22 @@ import java.net.URL;
 
 public class Today extends AppCompatActivity {
     CountDownTimer timer = null;
+    CountDownTimer timer2 = null;
+    int likeInt;
+    String likeString;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        send();
         setContentView(R.layout.today);
+
+
+        likeInt = Integer.parseInt(MainActivity.like);
+        likeInt++;
 
         ImageView test = (ImageView) findViewById(R.id.test);
 
@@ -55,6 +65,8 @@ public class Today extends AppCompatActivity {
 
             }
             public void onFinish() {
+
+                MainActivity.send();
                 timer.cancel();
                 finish();
             }
@@ -81,6 +93,7 @@ public class Today extends AppCompatActivity {
     }
 
     public void onButtonBackClicked(View v){
+        MainActivity.send();
         timer.cancel();
         finish();
     }
@@ -88,21 +101,41 @@ public class Today extends AppCompatActivity {
 
 
     public void onButtonLikeToday(View v){
+
+        final ImageView heart=(ImageView)findViewById(R.id.liketoday);
         timerReset();
 
+        send();
 
-        MainActivity.send();
+
+
+        timer2 = new CountDownTimer(400,400){
+            public void onTick(long millisUntilFinished) {
+
+            }
+            public void onFinish() {
+
+                heart.setBackgroundResource(R.drawable.like2);
+            }
+        };
+
+        timer2 .start();
+
+        heart.setBackgroundResource(R.drawable.like2push);
         ImageView smallheart = (ImageView)findViewById(R.id.smallliketoday);
         smallheart.setVisibility(View.VISIBLE);
         smallheart.startAnimation(AnimationUtils.loadAnimation(this,R.anim.heart_up));
         smallheart.setVisibility(View.INVISIBLE);
 
 
+        likeString = String.valueOf(likeInt);
+
+
         TextView liketext = (TextView)findViewById(R.id.liketodaytext);
-        liketext.setText(MainActivity.like);
+        liketext.setText(likeString);
 
+        likeInt++;
     }
-
 
 
     public static void send() {
@@ -123,21 +156,26 @@ public class Today extends AppCompatActivity {
                     http.setDoOutput(true);                       // 서버로 쓰기 모드 지정
                     http.setRequestMethod("POST");
 
-                    http.setRequestProperty("content-type", "application/x-www-form-urlencoded");
+                    http.setRequestProperty("content-type", "application/json");
                     //--------------------------
                     //   서버로 값 전송
                     //--------------------------
                     StringBuffer buffer = new StringBuffer();
 
-                    JSONObject job = new JSONObject();
+                    JSONObject jObj = new JSONObject();
+                    try {
+                        jObj.put("asd", itemName);
 
 
-                    job.put("item_name",itemName);
-                    System.out.println(itemName);
+                    } catch (JSONException e1) {
+                        e1.printStackTrace();
+                    }
+
 
                     OutputStream os = http.getOutputStream();
-                    os.write(job.toString().getBytes());
-                    os.flush();
+                    os.write(jObj.toString().getBytes());
+
+
 
                     InputStreamReader tmp = new InputStreamReader(http.getInputStream(), "EUC-KR");
                     BufferedReader reader = new BufferedReader(tmp);
@@ -153,8 +191,6 @@ public class Today extends AppCompatActivity {
                     //
                 } catch (IOException e) {
                     System.out.println(e);
-                } catch (JSONException e) {
-                    e.printStackTrace();
                 }
             }
 

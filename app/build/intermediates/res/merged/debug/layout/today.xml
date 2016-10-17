@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/today"
-  >
+    >
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-         android:id="@+id/test" />
+        android:id="@+id/test" />
     <TextView
         android:id="@+id/todayTitle"
         android:layout_width="match_parent"
@@ -31,34 +31,47 @@
         android:onClick="onButtonBackClicked"/>
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_width="320px"
-            android:layout_height="260px"
+            android:layout_width="330px"
+            android:layout_height="330px"
+            android:background="@drawable/like2"
+            android:onClick="onButtonLikeToday"
+            android:id="@+id/liketoday"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentRight="true"
             android:layout_marginRight="100px"
-            android:layout_marginBottom="100px"
-            android:background="@drawable/like"
-            android:onClick="onButtonLike"
-            android:id="@+id/liketoday"/>
+            android:layout_marginTop="570dp" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignLeft="@id/liketoday"
-            android:layout_alignBottom="@id/liketoday"
-            android:layout_alignTop="@id/liketoday"
-            android:layout_alignRight="@id/liketoday"
-            android:textSize="60px"
-            android:textColor="#ffffff"
-            android:id="@+id/liketodaytext"
-            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:textColor="#000000"
+            android:textSize="80px"
+            android:text="hi"
             android:onClick="onButtonLikeToday"
-            />
+            android:id="@+id/liketodaytext"
+            android:paddingRight="230dp"
+            android:paddingBottom="50dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="❤ "
+            android:textSize="70px"
+            android:onClick="onButtonLikeToday"
+            android:paddingBottom="50dp"
+            android:paddingRight="320dp" />
+
     </RelativeLayout>
+
 
     <ImageView
         android:layout_width="100px"
@@ -72,5 +85,4 @@
         android:visibility="invisible"/>
 
 </RelativeLayout>
-
 

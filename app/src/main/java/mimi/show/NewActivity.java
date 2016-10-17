@@ -28,7 +28,8 @@ public class NewActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_new);
-
+        MainActivity.send();
+        MainActivity.bestsend();
 
         textView1 = (TextView) findViewById(R.id.todaymenu);
         textView1.setTypeface(Typeface.createFromAsset(getAssets(), "pencil.ttf"));
@@ -63,7 +64,7 @@ public class NewActivity extends AppCompatActivity {
         view1.setOnTouchListener(new View.OnTouchListener() {
             public boolean onTouch(View v, MotionEvent event){
                 if(event.getAction() == MotionEvent.ACTION_DOWN){
-                   timer.cancel();
+                    timer.cancel();
                     timer.start();
                 }
                 return true;

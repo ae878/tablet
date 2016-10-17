@@ -1,7 +1,7 @@
-#Sat Sep 24 22:00:36 KST 2016
-base.0=C\:\\Users\\mijin\\Desktop\\Show\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_4366df7773c37098c800956fcc6b3cb7377fc7b2
+#Mon Oct 17 21:22:02 KST 2016
+base.0=C\:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_92a3f71220a2d1a0558d5251950a33d34c60f15e
 renamed.1=classes2.dex
 renamed.0=classes.dex
-file.1=C\:\\Users\\mijin\\Desktop\\Show\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_2c5a5b1c7dd4800fdbb818eb360c6792b6b11d24\\classes.dex
-base.1=C\:\\Users\\mijin\\Desktop\\Show\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_2c5a5b1c7dd4800fdbb818eb360c6792b6b11d24
-file.0=C\:\\Users\\mijin\\Desktop\\Show\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_4366df7773c37098c800956fcc6b3cb7377fc7b2\\classes.dex
+file.1=C\:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_6d5582bace7f0a8333d2149d05cc9f52a23c27b5\\classes.dex
+base.1=C\:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_6d5582bace7f0a8333d2149d05cc9f52a23c27b5
+file.0=C\:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_92a3f71220a2d1a0558d5251950a33d34c60f15e\\classes.dex
