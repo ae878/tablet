@@ -1,6 +1,9 @@
 package mimi.show;
 
+import android.animation.ValueAnimator;
 import android.content.Intent;
+import android.graphics.Path;
+import android.graphics.PathMeasure;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -10,7 +13,10 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
+import android.view.animation.Transformation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,8 +38,11 @@ public class Today extends AppCompatActivity {
     CountDownTimer timer2 = null;
     int likeInt;
     String likeString;
+    int i=0;
 
+    Animation zigZagAnimation[]= new ZigZagAnimation[100];
 
+    ImageView[] smallheart = new ImageView[100];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -42,6 +51,13 @@ public class Today extends AppCompatActivity {
 
         setContentView(R.layout.today);
 
+
+
+        for(int j=0;j<100;j++)
+        {        smallheart[j]= (ImageView)findViewById(R.id.smallliketoday);
+
+            zigZagAnimation[j]=new ZigZagAnimation();
+        }
 
         likeInt = Integer.parseInt(MainActivity.like);
         likeInt++;
@@ -53,11 +69,11 @@ public class Today extends AppCompatActivity {
 
         TextView liketext = (TextView)findViewById(R.id.liketodaytext);
 
-        liketext.setTypeface(Typeface.createFromAsset(getAssets(), "Tayle_B.ttf"));
+        liketext.setTypeface(Typeface.createFromAsset(getAssets(), "pencil.ttf"));
         liketext.setText(MainActivity.like);
 
         TextView title = (TextView) findViewById(R.id.todayTitle);
-        title.setTypeface(Typeface.createFromAsset(getAssets(), "Tayle_B.ttf"));
+        title.setTypeface(Typeface.createFromAsset(getAssets(), "pencil.ttf"));
 
 
         timer = new CountDownTimer(10000,10000){
@@ -66,6 +82,8 @@ public class Today extends AppCompatActivity {
             }
             public void onFinish() {
 
+
+                System.out.println("투데이 끝");
                 MainActivity.send();
                 timer.cancel();
                 finish();
@@ -106,9 +124,6 @@ public class Today extends AppCompatActivity {
         timerReset();
 
         send();
-
-
-
         timer2 = new CountDownTimer(400,400){
             public void onTick(long millisUntilFinished) {
 
@@ -122,10 +137,14 @@ public class Today extends AppCompatActivity {
         timer2 .start();
 
         heart.setBackgroundResource(R.drawable.like2push);
-        ImageView smallheart = (ImageView)findViewById(R.id.smallliketoday);
-        smallheart.setVisibility(View.VISIBLE);
-        smallheart.startAnimation(AnimationUtils.loadAnimation(this,R.anim.heart_up));
-        smallheart.setVisibility(View.INVISIBLE);
+        smallheart[i].setVisibility(View.VISIBLE);
+        if(i<100) {
+            smallheart[i].setAnimation(zigZagAnimation[i++]);
+        }
+        else
+            smallheart[i].setAnimation(zigZagAnimation[i=0]);
+
+        smallheart[i++].setVisibility(View.INVISIBLE);
 
 
         likeString = String.valueOf(likeInt);
@@ -164,7 +183,7 @@ public class Today extends AppCompatActivity {
 
                     JSONObject jObj = new JSONObject();
                     try {
-                        jObj.put("asd", itemName);
+                                       jObj.put("asd", itemName);
 
 
                     } catch (JSONException e1) {
@@ -195,5 +214,30 @@ public class Today extends AppCompatActivity {
             }
 
         }.start();
+    }
+}
+
+
+class ZigZagAnimation extends Animation {
+    private PathMeasure pm;
+    float[] pos = new float[2];
+
+    public ZigZagAnimation() {
+        Path p = new Path();
+        p.moveTo(0f, 0f);
+        p.quadTo(0f,0f,100f,-300f);
+        p.quadTo(100f,-300f,-100f,-600f);
+        p.quadTo(-100f,-600f,100f,-900f);
+        p.quadTo(100f,-900f,-100f,-1200f);
+        p.quadTo(-100f,-1200f,100f,-1500f);
+        pm = new PathMeasure(p, false);
+        setDuration(2000);
+    }
+
+    @Override
+    protected void applyTransformation(float interpolatedTime, Transformation t) {
+        float distance = pm.getLength() * interpolatedTime;
+        pm.getPosTan(distance, pos, null);
+        t.getMatrix().postTranslate(pos[0], pos[1]);
     }
 }

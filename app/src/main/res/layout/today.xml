@@ -1,88 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:id="@+id/today"
+    android:background="#FFFFFF"
+
+    >
+<ImageView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/today"
-    >
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/test" />
-    <TextView
-        android:id="@+id/todayTitle"
-        android:layout_width="match_parent"
-        android:layout_height="361px"
-        android:text="오늘의 메뉴"
-        android:textColor="#000000"
-        android:textSize="136.8px"
-        android:paddingTop="130px"
-        android:gravity="center_horizontal"/>
+    android:id="@+id/test" />
+<TextView
+    android:id="@+id/todayTitle"
+    android:layout_width="match_parent"
+    android:layout_height="361px"
+    android:text="오늘의 메뉴"
+    android:textColor="#000000"
+    android:textSize="136.8px"
+    android:paddingTop="130px"
+    android:gravity="center_horizontal"/>
+
+<ImageView
+    android:layout_width="110px"
+    android:layout_height="120px"
+    android:layout_marginLeft="120px"
+    android:layout_marginTop="110px"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:src="@drawable/back"
+    android:onClick="onButtonBackClicked"/>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <ImageView
-        android:layout_width="110px"
-        android:layout_height="120px"
-        android:layout_marginLeft="120px"
-        android:layout_marginTop="110px"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:src="@drawable/back"
-        android:onClick="onButtonBackClicked"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:layout_width="330px"
-            android:layout_height="330px"
-            android:background="@drawable/like2"
-            android:onClick="onButtonLikeToday"
-            android:id="@+id/liketoday"
-            android:layout_alignParentBottom="false"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="100px"
-            android:layout_marginTop="570dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:textColor="#000000"
-            android:textSize="80px"
-            android:text="hi"
-            android:onClick="onButtonLikeToday"
-            android:id="@+id/liketodaytext"
-            android:paddingRight="230dp"
-            android:paddingBottom="50dp" />
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:text="❤ "
-            android:textSize="70px"
-            android:onClick="onButtonLikeToday"
-            android:paddingBottom="50dp"
-            android:paddingRight="320dp" />
-
-    </RelativeLayout>
-
-
-    <ImageView
-        android:layout_width="100px"
-        android:layout_height="100px"
+        android:layout_width="330px"
+        android:layout_height="330px"
+        android:background="@drawable/like2"
+        android:onClick="onButtonLikeToday"
+        android:id="@+id/liketoday"
+        android:layout_alignParentBottom="false"
         android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginRight="100px"
-        android:layout_marginBottom="100px"
-        android:background="@drawable/like"
-        android:id="@+id/smallliketoday"
-        android:visibility="invisible"/>
+        android:layout_marginTop="570dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:textColor="#000000"
+        android:textSize="80px"
+        android:text="hi"
+        android:onClick="onButtonLikeToday"
+        android:id="@+id/liketodaytext"
+        android:paddingRight="230dp"
+        android:paddingBottom="50dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="❤ "
+        android:textSize="70px"
+        android:onClick="onButtonLikeToday"
+        android:paddingBottom="50dp"
+        android:paddingRight="320dp" />
+
+</RelativeLayout>
+
+
+<ImageView
+    android:layout_width="100px"
+    android:layout_height="100px"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentBottom="true"
+    android:layout_marginRight="100px"
+    android:layout_marginBottom="100px"
+    android:background="@drawable/like"
+    android:id="@+id/smallliketoday"
+    android:visibility="invisible"/>
 
 </RelativeLayout>
 

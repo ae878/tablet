@@ -31,7 +31,7 @@ import java.util.logging.Handler;
 
 public class ScreenViewFlipper extends RelativeLayout implements View.OnTouchListener {
 
-    public static int countIndexes = 3;
+    public static int countIndexes = 4;
     LinearLayout buttonLayout;
     ImageView[] indexButtons;
     View[] views;
@@ -110,11 +110,15 @@ public class ScreenViewFlipper extends RelativeLayout implements View.OnTouchLis
 
             ImageView imageSample = new ImageView(context);
             switch (i) {
-                case 0 : imageSample.setImageDrawable(MainActivity.fetchImage(MainActivity.img_dir3[0]));
+
+                case 0 :
+                    imageSample.setBackground(MainActivity.fetchImage(MainActivity.img_dir2[0]));
                     break;
-                case 1 : imageSample.setBackground(MainActivity.fetchImage(MainActivity.img_dir3[1]));
+                case 1 : imageSample.setBackground(MainActivity.fetchImage(MainActivity.img_dir2[1]));
                     break;
-                case 2 : imageSample.setBackground(MainActivity.fetchImage(MainActivity.img_dir3[2]));
+                case 2 : imageSample.setBackground(MainActivity.fetchImage(MainActivity.img_dir2[2]));
+                    break;
+                case 3 : imageSample.setBackground(MainActivity.fetchImage(MainActivity.img_dir2[3]));
                     break;
             }
 

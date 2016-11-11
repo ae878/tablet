@@ -89,9 +89,15 @@ public class MainActivity extends AppCompatActivity {
     static String[] likeTop3;
     static String[] img_dir2;
     static String[] img_dir3;
+    static String[] img_dir4;
+    static String[] faceitemName;
+    static String[] faceitemNameEng;
     static String myResult;
     static String testmyResult;
     static String bestmyResult;
+    static String likemyResult;
+
+    static String facemyResult;
     static String itemName;
     static String[] itemNameTop3;
 
@@ -101,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        facesend();
         likesend();
         testsend();
         bestsend();
@@ -142,11 +149,6 @@ public class MainActivity extends AppCompatActivity {
                         RC_HANDLE_CAMERA_PERM);
             }
         };
-
-     /*   Snackbar.make(mGraphicOverlay, "Access to the camera is needed for detection",
-                Snackbar.LENGTH_INDEFINITE)
-                .setAction(R.string.ok, listener)
-                .show();*/
 
     }
     private void createCameraSource() {
@@ -409,12 +411,12 @@ public class MainActivity extends AppCompatActivity {
                     //--------------------------
                     StringBuffer buffer = new StringBuffer();
 
-                    OutputStreamWriter outStream = new OutputStreamWriter(http.getOutputStream(), "EUC-KR"); //넘어감
+                    OutputStreamWriter outStream = new OutputStreamWriter(http.getOutputStream(), "UTF-8"); //넘어감
                     PrintWriter writer = new PrintWriter(outStream);
                     writer.write(buffer.toString());
                     writer.flush();
 
-                    InputStreamReader tmp = new InputStreamReader(http.getInputStream(), "EUC-KR");
+                    InputStreamReader tmp = new InputStreamReader(http.getInputStream(), "UTF-8");
                     BufferedReader reader = new BufferedReader(tmp);
                     StringBuilder builder = new StringBuilder();
                     String str;
@@ -422,7 +424,7 @@ public class MainActivity extends AppCompatActivity {
                         builder.append(str + "\n");                     // View에 표시하기 위해 라인 구분자 추가
                     }
                     myResult = builder.toString();                       // 전송결과를 전역 변수에 저장
-                    System.out.println("today"+myResult);
+                  //  System.out.println("today"+myResult);
                     doJSONParser();
 
                 } catch (MalformedURLException e) {
@@ -479,12 +481,12 @@ public class MainActivity extends AppCompatActivity {
                     //--------------------------
                     StringBuffer buffer = new StringBuffer();
 
-                    OutputStreamWriter outStream = new OutputStreamWriter(http.getOutputStream(), "EUC-KR"); //넘어감
+                    OutputStreamWriter outStream = new OutputStreamWriter(http.getOutputStream(), "UTF-8"); //넘어감
                     PrintWriter writer = new PrintWriter(outStream);
                     writer.write(buffer.toString());
                     writer.flush();
 
-                    InputStreamReader tmp = new InputStreamReader(http.getInputStream(), "EUC-KR");
+                    InputStreamReader tmp = new InputStreamReader(http.getInputStream(), "UTF-8");
                     BufferedReader reader = new BufferedReader(tmp);
                     StringBuilder builder = new StringBuilder();
                     String str;
@@ -492,7 +494,7 @@ public class MainActivity extends AppCompatActivity {
                         builder.append(str + "\n");                     // View에 표시하기 위해 라인 구분자 추가
                     }
                     testmyResult = builder.toString();                       // 전송결과를 전역 변수에 저장
-                    System.out.println("test"+testmyResult);
+                  //  System.out.println("test"+testmyResult);
                     testdoJSONParser();
 
                 } catch (MalformedURLException e) {
@@ -546,12 +548,12 @@ public class MainActivity extends AppCompatActivity {
                     //--------------------------
                     StringBuffer buffer = new StringBuffer();
 
-                    OutputStreamWriter outStream = new OutputStreamWriter(http.getOutputStream(), "EUC-KR"); //넘어감
+                    OutputStreamWriter outStream = new OutputStreamWriter(http.getOutputStream(), "UTF-8"); //넘어감
                     PrintWriter writer = new PrintWriter(outStream);
                     writer.write(buffer.toString());
                     writer.flush();
 
-                    InputStreamReader tmp = new InputStreamReader(http.getInputStream(), "EUC-KR");
+                    InputStreamReader tmp = new InputStreamReader(http.getInputStream(), "UTF-8");
                     BufferedReader reader = new BufferedReader(tmp);
                     StringBuilder builder = new StringBuilder();
                     String str;
@@ -559,7 +561,7 @@ public class MainActivity extends AppCompatActivity {
                         builder.append(str + "\n");                     // View에 표시하기 위해 라인 구분자 추가
                     }
                     bestmyResult = builder.toString();                       // 전송결과를 전역 변수에 저장
-                    System.out.println("best"+bestmyResult);
+                //   System.out.println("best"+bestmyResult);
                     bestdoJSONParser();
 
                 } catch (MalformedURLException e) {
@@ -614,20 +616,20 @@ public class MainActivity extends AppCompatActivity {
                     //--------------------------
                     StringBuffer buffer = new StringBuffer();
 
-                    OutputStreamWriter outStream = new OutputStreamWriter(http.getOutputStream(), "EUC-KR"); //넘어감
+                    OutputStreamWriter outStream = new OutputStreamWriter(http.getOutputStream(), "UTF-8"); //넘어감
                     PrintWriter writer = new PrintWriter(outStream);
                     writer.write(buffer.toString());
                     writer.flush();
 
-                    InputStreamReader tmp = new InputStreamReader(http.getInputStream(), "EUC-KR");
+                    InputStreamReader tmp = new InputStreamReader(http.getInputStream(), "UTF-8");
                     BufferedReader reader = new BufferedReader(tmp);
                     StringBuilder builder = new StringBuilder();
                     String str;
                     while ((str = reader.readLine()) != null) {       // 서버에서 라인단위로 보내줄 것이므로 라인단위로 읽는다
                         builder.append(str + "\n");                     // View에 표시하기 위해 라인 구분자 추가
                     }
-                    myResult = builder.toString();                       // 전송결과를 전역 변수에 저장
-                    System.out.println("hearhear"+myResult);
+                    likemyResult = builder.toString();                       // 전송결과를 전역 변수에 저장
+                  //  System.out.println("hear"+likemyResult);
                     likedoJSONParser();
 
                 } catch (MalformedURLException e) {
@@ -647,11 +649,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         try {
-            JSONArray jarray = new JSONArray(myResult);   // JSONArray 생성
+            JSONArray jarray = new JSONArray(likemyResult);   // JSONArray 생성
             for (int i = 0; i < jarray.length(); i++) {
                 JSONObject jObject = jarray.getJSONObject(i);  // JSONObject 추출
                 likeTop3[i]=jObject.getString("like");
-
                 itemNameTop3[i] = jObject.getString ("item_name");
             }
         } catch (JSONException e) {
@@ -664,17 +665,87 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+    public static void facesend() { //얼굴인식 화면
+
+        String sendData = null;
+        new Thread() {
+            public void run() {
+                try {
+
+                    URL url = new URL("http://52.78.68.136/get_face_page_data");       // URL 설정
+                    HttpURLConnection http = (HttpURLConnection) url.openConnection();   // 접속
+                    //--------------------------
+                    //   전송 모드 설정 - 기본적인 설정이다
+                    //--------------------------
+                    http.setDefaultUseCaches(false);
+                    http.setDoInput(true);                         // 서버에서 읽기 모드 지정
+                    http.setDoOutput(true);                       // 서버로 쓰기 모드 지정
+                    http.setRequestMethod("POST");
+
+                    http.setRequestProperty("content-type", "application/x-www-form-urlencoded");
+                    //--------------------------
+                    //   서버로 값 전송
+                    //--------------------------
+                    StringBuffer buffer = new StringBuffer();
+
+                    OutputStreamWriter outStream = new OutputStreamWriter(http.getOutputStream(), "UTF-8"); //넘어감
+                    PrintWriter writer = new PrintWriter(outStream);
+                    writer.write(buffer.toString());
+                    writer.flush();
+
+                    InputStreamReader tmp = new InputStreamReader(http.getInputStream(), "UTF-8");
+                    BufferedReader reader = new BufferedReader(tmp);
+                    StringBuilder builder = new StringBuilder();
+                    String str;
+                    while ((str = reader.readLine()) != null) {       // 서버에서 라인단위로 보내줄 것이므로 라인단위로 읽는다
+                        builder.append(str + "\n");                     // View에 표시하기 위해 라인 구분자 추가
+                    }
+                    facemyResult = builder.toString();                       // 전송결과를 전역 변수에 저장
+                //    System.out.println("FACE"+facemyResult);
+                    facedoJSONParser();
+
+                } catch (MalformedURLException e) {
+                    //
+                } catch (IOException e) {
+                    System.out.println(e);
+                }
+            }
+
+        }.start();
+    }
+
+
+    public static void facedoJSONParser(){
+
+        img_dir4=new String[50];
+        faceitemName = new String[30];
+        faceitemNameEng = new String[30];
+        try {
+            JSONArray jarray = new JSONArray(facemyResult);   // JSONArray 생성
+            for (int i = 0; i < jarray.length(); i++) {
+                JSONObject jObject = jarray.getJSONObject(i);  // JSONObject 추출
+                img_dir4[i] = "http://52.78.68.136/" + jObject.getString("img_dir");
+                faceitemName[i]= jObject.getString("item_name");
+                faceitemNameEng[i]= jObject.getString("item_name_eng");
+
+            }
+        }catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+
     android.os.Handler mHandler = new android.os.Handler(){
         public void handleMessage(Message msg){
             buttonLayout.performClick();
             mHandler.sendEmptyMessageDelayed(2500, 2500);
         };
     };
-    public void onButton3Clicked(View v) {
 
-        Intent intent = new Intent(getApplicationContext(), NewActivity.class);
-        startActivity(intent);
-    }
     //오늘의메뉴, 메인메뉴, 베스트
     public static class today_data implements Serializable{
         int like;

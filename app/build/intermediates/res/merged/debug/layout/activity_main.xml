@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     >
 
    <mimi.show.CameraSourcePreview
@@ -29,11 +30,6 @@
        android:layout_height="wrap_content"
        android:layout_alignParentLeft="true">
 
-      <Button
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="얼굴 인식"
-          android:onClick="onButton3Clicked"/>
 
    </LinearLayout>
 

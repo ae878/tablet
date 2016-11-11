@@ -4,6 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.Path;
+import android.graphics.PathMeasure;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.CountDownTimer;
@@ -45,13 +48,16 @@ public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouc
     ImageView[] tag;
     View[] views;
     ViewFlipper flipper;
-    TextView[] heartLike;
+    TextView heartLike;
     TextView[] tagText;
-    CountDownTimer timer;
+
     int likeInt[];
     String likeString;
 
     ImageView heart;
+    ImageView smallheart;
+
+   CountDownTimer timer;
     CountDownTimer timer2=null;
 
     int currentIndex = 0;
@@ -63,14 +69,12 @@ public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouc
 
         super(context);
 
-        // send();
         init(context);
     }
     public Top3ScreenViewFlipper(Context context, AttributeSet attrs) {
 
         super(context, attrs);
 
-        // send();
         init(context);
     }
 
@@ -80,10 +84,12 @@ public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouc
 
         likeInt = new int[3];
 
+
         for(int i=0;i<3;i++){
 
-            likeInt[i] = Integer.parseInt(MainActivity.likeTop3[0]);
+            likeInt[i] = Integer.parseInt(MainActivity.likeTop3[i]);
             likeInt[i]++;
+
         }
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.top3screenview,this,true);
@@ -98,12 +104,8 @@ public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouc
         tag = new ImageView[countIndexes];
         tagText = new TextView[countIndexes];
 
-        heartLike = new TextView[countIndexes];
 
-        heart = new ImageView(context);
-
-
-        heart=(ImageView)findViewById(R.id.like);
+        heart = (ImageView)findViewById(R.id.like);
         tag[0]= (ImageView) findViewById(R.id.tag1);
         tag[1] = (ImageView) findViewById(R.id.tag2);
         tag[2] = (ImageView) findViewById(R.id.tag3);
@@ -112,9 +114,12 @@ public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouc
         tagText[1] = (TextView) findViewById(R.id.tag2text);
         tagText[2] = (TextView) findViewById(R.id.tag3text);
 
-        heartLike[0] = (TextView)findViewById(R.id.liketext1) ;
-        heartLike[1] = (TextView)findViewById(R.id.liketext2);
-        heartLike[2] = (TextView)findViewById(R.id.liketext3);
+        heartLike = (TextView)findViewById(R.id.liketext1) ;
+
+
+        smallheart = (ImageView)findViewById(R.id.smalllike);
+
+
 
 
         timer = new CountDownTimer(10000,10000){
@@ -122,20 +127,25 @@ public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouc
 
             }
             public void onFinish() {
-                timer.cancel();
-                Intent intent = new Intent(context, NewActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);//MainActivity.class로 돌아가면서 스택에 있는 activity들을 모두 삭제하고 돌아간다.
-                context.startActivity(intent);
 
+                timer.cancel();
+                MainActivity.likesend();
+                Top3Activity top3Activity= new Top3Activity();
+                top3Activity.onButtonBackClicked(findViewById(R.id.top3));
             }
         };
+
+
         timer .start();
+
         tagText[0].setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 ViewFlipper flipper = (ViewFlipper) findViewById(R.id.top3flipper);
                 timer.cancel();
                 timer.start();
-                heartLike[0].setText(MainActivity.likeTop3[0]);
+
+                heartLike.setText(MainActivity.likeTop3[0]);
+
                 switch(flipper.getDisplayedChild()){
 
                     case 0:
@@ -158,7 +168,7 @@ public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouc
                 ViewFlipper flipper = (ViewFlipper) findViewById(R.id.top3flipper);
                 timer.cancel();
                 timer.start();
-                heartLike[1].setText(MainActivity.likeTop3[1]);
+                heartLike.setText(MainActivity.likeTop3[1]);
                 switch(flipper.getDisplayedChild()){
                     case 1:
                         break;
@@ -184,7 +194,7 @@ public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouc
                 ViewFlipper flipper = (ViewFlipper) findViewById(R.id.top3flipper);
                 timer.cancel();
                 timer.start();
-                heartLike[2].setText(MainActivity.likeTop3[2]);
+                heartLike.setText(MainActivity.likeTop3[2]);
                 switch(flipper.getDisplayedChild()){
                     case 2:
                         break;
@@ -212,15 +222,14 @@ public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouc
             ImageView imageSample = new ImageView(context);
             switch (i) {
 
-                case 0 :  aq.id(imageSample).image(MainActivity.img_dir2[0]);
-                    heartLike[0].setText(MainActivity.likeTop3[0]);
-
+                case 0 :  imageSample.setBackground(MainActivity.fetchImage(MainActivity.img_dir3[0]));
+                    heartLike.setText(MainActivity.likeTop3[0]);
                     break;
-                case 1 : imageSample.setImageDrawable(MainActivity.fetchImage(MainActivity.img_dir2[1]));;
-                    heartLike[1].setText(MainActivity.likeTop3[1]);
+                case 1 : imageSample.setBackground(MainActivity.fetchImage(MainActivity.img_dir3[1]));
+                    heartLike.setText(MainActivity.likeTop3[1]);
                     break;
-                case 2 : imageSample.setImageDrawable(MainActivity.fetchImage(MainActivity.img_dir[2]));;
-                    heartLike[2].setText(MainActivity.likeTop3[2]);
+                case 2 : imageSample.setBackground(MainActivity.fetchImage(MainActivity.img_dir3[2]));
+                    heartLike.setText(MainActivity.likeTop3[2]);
                     break;
             }
 
@@ -236,48 +245,36 @@ public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouc
                 timer.cancel();
                 timer.start();
 
-                heartPush(0);
+                heartPush();
 
                 timer2 = new CountDownTimer(400,400){
                     public void onTick(long millisUntilFinished) {
 
                     }
                     public void onFinish() {
-                        heart.setImageResource(R.drawable.like2);
-                        System.out.println("끝");
+                        heart.setBackgroundResource(R.drawable.like2);
+
+
                     }
                 };
 
                 timer2 .start();
-                heart.setImageResource(R.drawable.like2push);
 
-                ImageView smallheart = (ImageView)findViewById(R.id.smalllike);
+                heart.setBackgroundResource(R.drawable.like2push);
+
                 smallheart.setVisibility(View.VISIBLE);
-                smallheart.startAnimation(AnimationUtils.loadAnimation(context,R.anim.heart_up));
+                smallheart.startAnimation(new ZigZagAnimation());
                 smallheart.setVisibility(View.INVISIBLE);
 
 
+                if(currentIndex==0)
+                     likeString = String.valueOf(likeInt[currentIndex]++);
+                else
+                    likeString = String.valueOf(++likeInt[currentIndex]);
 
-                switch (currentIndex)
-                {
-                    case 0:
 
-                        likeString = String.valueOf(likeInt[0]);
-                        heartLike[0].setText(likeString);
-                        likeInt[0]++;
-                        break;
-                    case 1:
+                heartLike.setText(likeString);
 
-                        likeString = String.valueOf(likeInt[1]);
-                        heartLike[1].setText(likeString);
-                        likeInt[1]++;
-                        break;
-                    case 2:
-                          likeString = String.valueOf(likeInt[2]);
-                    heartLike[2].setText(likeString);
-                    likeInt[2]++;
-                    break;
-                }
             }
         });
     }
@@ -292,15 +289,19 @@ public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouc
                 tag[i].setLayoutParams(params);
 
                 tagText[i].setTextSize(0,70);
+                tagText[i].setTextColor(Color.YELLOW);
+
+                likeString = String.valueOf(likeInt[currentIndex]);
+                heartLike.setText(likeString);
+
             }else{
 
                 LayoutParams params = (LayoutParams) tag[i].getLayoutParams();
-                params.width = 250;
+                params.width = 200;
                 params.height = 120;
 
                 tag[i].setLayoutParams(params);
-
-                tagText[i].setTextSize(0,50);
+                tagText[i].setTextSize(0,50); tagText[i].setTextColor(Color.WHITE);
             }
         }
 
@@ -332,7 +333,6 @@ public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouc
                 else
                     currentIndex++;
 
-                heartLike[currentIndex].setText(MainActivity.likeTop3[currentIndex]);
                 updateIndexes();
 
             } else if (upY>downY) {
@@ -346,8 +346,6 @@ public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouc
                     currentIndex = 2;
                 else
                     currentIndex--;
-
-                heartLike[currentIndex].setText(MainActivity.likeTop3[currentIndex]);
                 updateIndexes();
 
             }
@@ -360,18 +358,15 @@ public class Top3ScreenViewFlipper extends RelativeLayout implements View.OnTouc
 
 
 
-    public static void heartPush(final int num) {
-int i;
-        String sendData = null;
-        final String itemName[] = new String[50];
-       for(i=0;i<3;i++) {
-           itemName[i] = MainActivity.itemNameTop3[i];
-       }
+    public void heartPush() {
+
+        final String itemName = MainActivity.itemNameTop3[currentIndex];;
+
         new Thread() {
             public void run() {
                 try {
 
-                    URL url = new URL("http://52.78.68.136/get_item_data_sorted_by_liked");       // URL 설정
+                    URL url = new URL("http://52.78.68.136/liked");       // URL 설정
                     HttpURLConnection http = (HttpURLConnection) url.openConnection();   // 접속
                     //--------------------------
                     //   전송 모드 설정 - 기본적인 설정이다
@@ -389,7 +384,8 @@ int i;
 
                     JSONObject jObj = new JSONObject();
                     try {
-                        jObj.put("asd", itemName[num]);
+                        System.out.println("RRRRRRRRR"+itemName);
+                        jObj.put("asd", itemName);
 
 
                     } catch (JSONException e1) {
@@ -424,3 +420,4 @@ int i;
 
 
 }
+

@@ -73,7 +73,7 @@
             android:layout_alignRight="@id/tag1"
             android:text="1위"
             android:textSize="70px"
-            android:textColor="#ffffff"
+            android:textColor="#FFFF00"
             android:gravity="center"
             android:id="@+id/tag1text"/>
 
@@ -85,7 +85,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginBottom="30px"
             android:gravity="right|fill"
-            android:background="@drawable/tab_2"
+            android:background="@drawable/tab_1"
             android:id="@+id/tag2"/>
         <TextView
             android:layout_width="match_parent"
@@ -109,7 +109,7 @@
             android:layout_height="120px"
             android:layout_below="@id/tag2"
             android:layout_alignParentRight="true"
-            android:background="@drawable/tab_3"
+            android:background="@drawable/tab_1"
             android:id="@+id/tag3"/>
 
         <TextView
@@ -138,11 +138,10 @@
             android:layout_width="330px"
             android:layout_height="330px"
             android:background="@drawable/like2"
-
             android:id="@+id/like"
             android:layout_alignParentBottom="false"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="100px"
+            android:layout_marginRight="90px"
             android:layout_marginTop="570dp" />
 
 
@@ -153,8 +152,6 @@
             android:layout_alignParentRight="true"
             android:textColor="#000000"
             android:textSize="80px"
-            android:text="hi"
-
             android:id="@+id/liketext1"
             android:paddingRight="230dp"
             android:paddingBottom="50dp" />
@@ -166,57 +163,11 @@
             android:layout_alignParentRight="true"
             android:text="❤ "
             android:textSize="70px"
-
             android:paddingBottom="50dp"
             android:paddingRight="320dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:textColor="#000000"
-            android:textSize="80px"
-            android:text="hi"
-            android:onClick="onButtonLike"
-            android:id="@+id/liketext2"
-            android:paddingRight="230dp"
-            android:paddingBottom="50dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:text="❤ "
-            android:textSize="70px"
-            android:onClick="onButtonLike"
-            android:paddingBottom="50dp"
-            android:paddingRight="320dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:textColor="#000000"
-            android:textSize="80px"
-            android:text="hi"
-            android:onClick="onButtonLike"
-            android:id="@+id/liketext3"
-            android:paddingRight="230dp"
-            android:paddingBottom="50dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:text="❤ "
-            android:textSize="70px"
-            android:onClick="onButtonLike"
-            android:paddingBottom="50dp"
-            android:paddingRight="320dp" />
 
     </RelativeLayout>
 

@@ -36,10 +36,8 @@ import java.net.URL;
 
 public class Top3Activity extends AppCompatActivity {
     TextView textView;
-    CountDownTimer timer;
-
-
-
+    TextView like;
+    TextView heartLike;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,11 +64,14 @@ public class Top3Activity extends AppCompatActivity {
 
 
 
+        heartLike = (TextView)findViewById(R.id.liketext1);
+
+        heartLike.setText(MainActivity.likeTop3[0]);
     }
 
 
-    public void onButtonBackClicked(View v){
-
+   public void onButtonBackClicked(View v){
+       MainActivity.likesend();
         finish();
     }
 

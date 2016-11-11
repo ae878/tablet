@@ -34,10 +34,12 @@
             android:layout_gravity="center_horizontal"/>
 
         <ImageView
+            android:layout_marginTop="20px"
             android:layout_width="520px"
-            android:layout_height="860px"
+            android:layout_height="800px"
             android:layout_gravity="center"
-            android:background="@drawable/caramel"/>
+            android:id="@+id/facebestimg"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -91,9 +93,11 @@
             android:shadowColor="#000000"/>
 
         <ImageView
+            android:layout_marginTop="20px"
             android:layout_width="520px"
-            android:layout_height="860px"
-            android:background="@drawable/redbean"
+            android:layout_height="800px"
+
+            android:id="@+id/facetodayimg"
             android:layout_gravity="center"
             />
         <TextView

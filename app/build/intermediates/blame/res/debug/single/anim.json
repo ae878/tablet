@@ -32,10 +32,6 @@
         "source": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\src\\main\\res\\anim\\push_down_in.xml"
     },
     {
-        "merged": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\res\\merged\\debug\\anim\\heart_up.xml",
-        "source": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\src\\main\\res\\anim\\heart_up.xml"
-    },
-    {
         "merged": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
         "source": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\anim\\abc_slide_out_bottom.xml"
     },
@@ -54,10 +50,6 @@
     {
         "merged": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_in.xml",
         "source": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\src\\main\\res\\anim\\push_right_in.xml"
-    },
-    {
-        "merged": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\res\\merged\\debug\\anim\\heart_up2.xml",
-        "source": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\src\\main\\res\\anim\\heart_up2.xml"
     },
     {
         "merged": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\res\\merged\\debug\\anim\\push_left_out.xml",

@@ -84,10 +84,6 @@
         "source": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\src\\main\\res\\drawable\\kakao1.png"
     },
     {
-        "merged": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tab_2.png",
-        "source": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\src\\main\\res\\drawable\\tab_2.png"
-    },
-    {
         "merged": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
         "source": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
@@ -108,12 +104,12 @@
         "source": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\drawable\\common_plus_signin_btn_text_light.xml"
     },
     {
-        "merged": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_light.xml",
-        "source": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_dialog_material_background_light.xml"
-    },
-    {
         "merged": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\swipe_select.png",
         "source": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\src\\main\\res\\drawable\\swipe_select.png"
+    },
+    {
+        "merged": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_light.xml",
+        "source": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_dialog_material_background_light.xml"
     },
     {
         "merged": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\kakao3.jpg",
@@ -132,12 +128,12 @@
         "source": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
     },
     {
-        "merged": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\background.jpg",
-        "source": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\src\\main\\res\\drawable\\background.jpg"
-    },
-    {
         "merged": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\redbean.png",
         "source": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\src\\main\\res\\drawable\\redbean.png"
+    },
+    {
+        "merged": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\background.jpg",
+        "source": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\src\\main\\res\\drawable\\background.jpg"
     },
     {
         "merged": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
@@ -154,10 +150,6 @@
     {
         "merged": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\kakao4.jpg",
         "source": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\src\\main\\res\\drawable\\kakao4.jpg"
-    },
-    {
-        "merged": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tab_3.png",
-        "source": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\src\\main\\res\\drawable\\tab_3.png"
     },
     {
         "merged": "C:\\Users\\mijin\\AndroidProject\\Show\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\like2.png",
